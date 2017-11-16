@@ -18,19 +18,19 @@ export class LevelingPage {
 
           let level = 0;
 
-
           //store data
           if(localStorage.level) level = localStorage.getItem('level');
           document.getElementById("level").innerHTML = level;
 
           // level up when clicked 
-          level = parseInt(level) + 1;
+          level = Math.min(Math.max(parseInt(level), 0), 10);
+          level = level + 1;
+
           document.getElementById("level").innerHTML = level;
           localStorage.setItem('level', level);
 
-          //test
-          console.log("Hello?");
-          
+          //localStorage.clear();
+
       }
 
 }
