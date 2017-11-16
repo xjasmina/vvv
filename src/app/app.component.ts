@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
 import { TripplannerPage } from '../pages/tripplanner/tripplanner';
 import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
+
 
 
 
@@ -16,7 +18,7 @@ import { ListPage } from '../pages/list/list';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -28,7 +30,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Achievements', component: LevelingPage },
       { title: 'Tripplanner', component: TripplannerPage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'Login', component: LoginPage }
     ];
 
   }

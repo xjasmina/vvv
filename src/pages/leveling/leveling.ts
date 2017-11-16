@@ -29,6 +29,10 @@ export class LevelingPage {
           document.getElementById("level").innerHTML = level;
           localStorage.setItem('level', level);
 
+          if (level = 1) {
+            console.log("wow nog maar level 1");
+          }
+
           //localStorage.clear();
 
       }
