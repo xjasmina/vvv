@@ -7,9 +7,14 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content>
   <h1>test</h1>
-  <button onclick="levelClick()">Click here</button>
+  <button (click)='levelClick();' >leveling</button> 
   <p>Level: 
-  <span id="level"></span></p>
+  <span id="level">
+    <script>
+      var data = sessionStorage.getItem('level');
+    </script>
+  </span></p>
 </ion-content>

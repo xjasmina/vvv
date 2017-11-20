@@ -28,7 +28,7 @@ export class LevelingPage {
             console.log("wow nog maar level 1");
           }
 
-          // localStorage.clear();
+          //localStorage.clear();
 
       }
 
