@@ -7,31 +7,19 @@ import { Component } from '@angular/core';
 
 export class LevelingPage {
 
+ levelClick() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
 
-      // // start leveling on click
-      // levelClick() {
-
-      //     let level: number = 0;
-
-      //     //store data
-      //     if(localStorage.level) level = localStorage.getItem('level');
-      //     document.getElementById('level').innerHTML = level;
-
-      //     // level up when clicked 
-      //     level = Math.min(Math.max(parseInt(level), 0), 10);
-      //     level = level + 1;
-
-      //     document.getElementById('level').innerHTML = level;
-      //     localStorage.setItem('level', level);
-
-      //     if (level == 1) {
-      //       console.log("wow nog maar level 1");
-      //     }
-
-      //     //localStorage.clear();
-
-      // }
-
+}
 }
 
 
