@@ -11,13 +11,13 @@ export class LevelingPage {
  levelClick() {
 
 
-  var level = "0";
+    var level = "0";
 
     if(typeof(Storage) !== "undefined") {
 
 
           localStorage.level = Number(localStorage.level) + 1;
-          localStorage.level = Math.min(Math.max(parseInt(localStorage.level), 0), 100);
+          localStorage.level = Math.min(Math.max(parseInt(localStorage.level), 0), 200);
 
           localStorage.setItem('current-level', level);
      
