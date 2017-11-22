@@ -10,7 +10,7 @@ import { TripplannerPage } from '../pages/tripplanner/tripplanner';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 
-
+import { NativeStorage } from '@ionic-native/native-storage';
 
 
 
@@ -20,12 +20,12 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage) {
+
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -45,6 +45,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
   }
 
   openPage(page) {

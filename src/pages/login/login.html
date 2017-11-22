@@ -7,7 +7,22 @@
   </ion-navbar>
 </ion-header>
 
- 
 <ion-content padding>
+<p>test</p>
+
+<ion-card *ngIf="userData">
+    <ion-card-header>{{ userData.displayName }}</ion-card-header>
+    <img id="photoURL" [src]="photoURL alt="" style="height: 300px;" />
+    <ion-card-content>
+      <p>Name: {{ displayName }}</p>
+      <p>First Name: {{ userData.displayName }}</p>
+    </ion-card-content>
+  </ion-card>
+ 
+
+  <button ion-button full (click)="loginFB()">Login met Facebook</button>
+  <button ion-button full (click)="logoutFB()">Uitloggen</button>
+
+
 
 </ion-content>

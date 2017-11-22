@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { NativeStorage } from '@ionic-native/native-storage';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
@@ -15,6 +16,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+import { Facebook } from '@ionic-native/facebook';
+import firebase from 'firebase';
+
+let firebaseConfig = {
+    apiKey: "AIzaSyDy3oDBnUdnC-RPjgqjVvTrVRv2vAc_2eA",
+    authDomain: "vvv-project.firebaseapp.com",
+    databaseURL: "https://vvv-project.firebaseio.com",
+    projectId: "vvv-project",
+    storageBucket: "vvv-project.appspot.com",
+    messagingSenderId: "351107616033"
+};
+
+firebase.initializeApp(firebaseConfig);  
 
 @NgModule({
   declarations: [
@@ -42,7 +56,9 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}, IonicStorageModule
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, IonicStorageModule,
+    Facebook,
+    NativeStorage
   ]
 })
 export class AppModule {}
