@@ -8,20 +8,19 @@
 </ion-header>
 
 <ion-content padding>
-<p>test</p>
 
-<ion-card *ngIf="userData">
-    <ion-card-header>{{ userData.displayName }}</ion-card-header>
-    <img id="photoURL" [src]="photoURL alt="" style="height: 300px;" />
-    <ion-card-content>
-      <p>Name: {{ displayName }}</p>
-      <p>First Name: {{ userData.displayName }}</p>
-    </ion-card-content>
-  </ion-card>
- 
+<ion-card *ngIf="userProfile">
+  <img *ngIf="userProfile" [src]="userProfile.photoURL"/>
+  <ion-card-content>
+    <ion-card-title *ngIf="userProfile">
+      {{ userProfile.displayName }}
+    </ion-card-title>
+  </ion-card-content>
+</ion-card>
+
 
   <button ion-button full (click)="loginFB()">Login met Facebook</button>
-  <button ion-button full (click)="logoutFB()">Uitloggen</button>
+    <button ion-button full (click)="logoutFB()">Uitloggen</button>
 
 
 

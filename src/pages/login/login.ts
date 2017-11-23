@@ -11,37 +11,46 @@ import { Facebook } from '@ionic-native/facebook';
 
 export class LoginPage { 
 
-constructor(public facebook: Facebook){}
+constructor( private facebook: Facebook){
 
-	userData = null;
+    firebase.auth().onAuthStateChanged( user => {
+    if (user){
+      this.userProfile = user;
+      alert("test of je ingelogd bent");
+    } else { 
+      this.userProfile = null; 
+      alert("test of je niet ingelogd bent");
+    }
+  });
+}
 
-	loginFB(): Promise<any> {
-
-	  return this.facebook.login(['public_profile', 'email'])
-	    .then( response => {
-
-	      const facebookCredential = firebase.auth.FacebookAuthProvider
-	        .credential(response.authResponse.accessToken);
-
-	      firebase.auth().signInWithCredential(facebookCredential)
-	        .then( success => {  	
-	          alert("het werkt");
-	        });
-	        
-	    }).catch((error) => { 
-	    	console.log(error) 
-	    });
+  userProfile = firebase.auth().currentUser;
 
 
-	}
+  loginFB(): void {
+    this.facebook.login(['email']).then( (response) => {
+      const facebookCredential = firebase.auth.FacebookAuthProvider
+        .credential(response.authResponse.accessToken);
 
-	logoutFB() {
-	    this.facebook.logout().then((response) => {
-	      alert(JSON.stringify("U bent uitgelogd."));
-	    }, (error) => {
-	      alert("U bent niet ingelogd.");
-	    })
-	}
+      firebase.auth().signInWithCredential(facebookCredential)
+        .then((success) => {
+          console.log("Firebase success: " + JSON.stringify(success));
+          this.userProfile = success;
+        });
+      }, (error) => {
+          console.log("Firebase failure: " + JSON.stringify(error));
+      });
+  }
+
+   logoutFB() {
+   firebase.auth().signOut()
+   .then(function() {
+      console.log('Signout successful!')
+   }, function(error) {
+      console.log('Signout failed')
+   });
+}
+
 
 
 } // end class loginpage
