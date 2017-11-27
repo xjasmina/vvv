@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import firebase from 'firebase';
-import { Facebook } from '@ionic-native/facebook';
 
 
 @Component({
