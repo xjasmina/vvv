@@ -29,7 +29,7 @@ export class TripplannerPage {
 
 		this.map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 6
+          zoom: 11
         });
         this.infoWindow = new google.maps.InfoWindow;
 
@@ -55,6 +55,8 @@ export class TripplannerPage {
 
 	}
 
+	
+
 	 handleLocationError(browserHasGeolocation, infoWindow, pos, map) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
@@ -62,7 +64,5 @@ export class TripplannerPage {
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
-
-
 
 }
