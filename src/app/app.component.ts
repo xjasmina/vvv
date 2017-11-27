@@ -34,9 +34,11 @@ export class MyApp {
         firebase.auth().onAuthStateChanged( user => {
     if (user){
       this.userProfile = user;
+      this.rootPage = HomePage;
       alert("test of je ingelogd bent");
     } else { 
       this.userProfile = null; 
+      this.rootPage = LoginPage;
       alert("test of je niet ingelogd bent");
     }
   });
