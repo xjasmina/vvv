@@ -2,7 +2,7 @@
   <ion-header>
     <ion-toolbar>
       <ion-title>Menu</ion-title>
-      <img *ngIf="userProfile" [src]="userProfile.photoURL"/>
+      <img ion-avatar *ngIf="userProfile" [src]="userProfile.photoURL"/>
     </ion-toolbar>
   </ion-header>
 
@@ -11,6 +11,7 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
+      <button ion-button full (click)="loginFB()">Login met Facebook</button>
       <button ion-button full (click)="logoutFB()">Uitloggen</button>
     </ion-list>
   </ion-content>
