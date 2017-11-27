@@ -4,6 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Achievements</ion-title>
+    <img *ngIf="userProfile" [src]="userProfile.photoURL"/>
   </ion-navbar>
 </ion-header>
 

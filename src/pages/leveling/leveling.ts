@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import firebase from 'firebase';
+import { Facebook } from '@ionic-native/facebook';
+
 
 @Component({
   selector: 'page-leveling',
@@ -27,6 +30,7 @@ export class LevelingPage {
         }
           document.getElementById("current-level").innerHTML = "You have clicked the button " + localStorage.level + " time(s).";
       }
+
 
 
 }

@@ -12,6 +12,9 @@ import { LoginPage } from '../pages/login/login';
 
 import { NativeStorage } from '@ionic-native/native-storage';
 
+import firebase from 'firebase';
+import { Facebook } from '@ionic-native/facebook';
+
 
 
 @Component({
@@ -24,7 +27,20 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private facebook: Facebook) {
+
+
+    //add facebook on every page
+        firebase.auth().onAuthStateChanged( user => {
+    if (user){
+      this.userProfile = user;
+      alert("test of je ingelogd bent");
+    } else { 
+      this.userProfile = null; 
+      alert("test of je niet ingelogd bent");
+    }
+  });
+
 
 
     // used for an example of ngFor and navigation
@@ -37,6 +53,37 @@ export class MyApp {
     ];
 
   }
+
+
+  //if facebook started, check current user
+  userProfile = firebase.auth().currentUser;
+
+  loginFB(): void {
+    this.facebook.login(['email']).then( (response) => {
+      const facebookCredential = firebase.auth.FacebookAuthProvider
+        .credential(response.authResponse.accessToken);
+
+      firebase.auth().signInWithCredential(facebookCredential)
+        .then((success) => {
+          console.log("Firebase success: " + JSON.stringify(success));
+          this.userProfile = success;
+        });
+      }, (error) => {
+          console.log("Firebase failure: " + JSON.stringify(error));
+      });
+  }
+
+  //logout of facebook
+  logoutFB() {
+   firebase.auth().signOut()
+   .then(function() {
+      console.log('Signout successful!')
+   }, function(error) {
+      console.log('Signout failed')
+   });
+}
+
+  //////////////
 
   initializeApp() {
     this.platform.ready().then(() => {
