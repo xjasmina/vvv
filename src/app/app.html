@@ -12,7 +12,10 @@
         {{p.title}}
       </button>
       <button ion-button full *ngIf="!userProfile" (click)="loginFB()">Login met Facebook</button>
-      <button ion-button full *ngIf="userProfile" (click)="logoutFB()">Uitloggen</button>
+      <button ion-button full *ngIf="!userProfile" (click)="loginGM()">Login met Google</button>
+
+      <button ion-button full *ngIf="userProfile" (click)="logoutFB()">Uitloggen fb</button>
+      <button ion-button full *ngIf="userProfile" (click)="logoutGM()">Uitloggen gm</button>
     </ion-list>
   </ion-content>
 </ion-menu>

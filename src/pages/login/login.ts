@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import firebase from 'firebase';
 import { Facebook } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
+
 
 
 @Component({
@@ -11,7 +13,7 @@ import { Facebook } from '@ionic-native/facebook';
 
 export class LoginPage { 
 
-constructor( private facebook: Facebook){ 
+constructor( private facebook: Facebook, private google: GooglePlus){ 
 
     firebase.auth().onAuthStateChanged( user => {
     if (user){
@@ -28,6 +30,7 @@ constructor( private facebook: Facebook){
 
   userProfile = firebase.auth().currentUser;
 
+//facebook
   loginFB(): void {
     this.facebook.login(['email']).then( (response) => {
       const facebookCredential = firebase.auth.FacebookAuthProvider
@@ -51,6 +54,27 @@ constructor( private facebook: Facebook){
       console.log('Signout failed')
    });
 }
+
+// google login
+
+loginUser(): void {
+  this.google.login({
+    'webClientId': '351107616033-mi4upnobeom629n99im9ne7hj1ge801s.apps.googleusercontent.com',
+    'offline': true
+  }).then( res => {
+          const googleCredential = firebase.auth.GoogleAuthProvider
+              .credential(res.idToken);
+ 
+          firebase.auth().signInWithCredential(googleCredential)
+        .then( response => {
+            console.log("Firebase success: " + JSON.stringify(response));
+            this.userProfile = response;
+        });
+  }, (error) => {
+          console.log("Firebase failure: " + JSON.stringify(error));
+      });
+}
+  
 
 
 } // end class loginpage
