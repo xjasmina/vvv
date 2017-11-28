@@ -31,7 +31,7 @@ export class MyApp {
 
 
     //add facebook on every page
-        firebase.auth().onAuthStateChanged( user => {
+  firebase.auth().onAuthStateChanged( user => {
     if (user){
       this.userProfile = user;
       this.rootPage = HomePage;

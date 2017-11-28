@@ -8,7 +8,5 @@
 </ion-header>
 
 <ion-content padding>
-
-<h2>test</h2>
-
+    <button ion-button full *ngIf="!userProfile" (click)="loginFB()">Login met Facebook</button>
 </ion-content>

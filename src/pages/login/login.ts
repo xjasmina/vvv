@@ -23,7 +23,7 @@ constructor( private facebook: Facebook){
     }
   });
 
-  }
+}
 
 
   userProfile = firebase.auth().currentUser;

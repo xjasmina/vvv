@@ -18,6 +18,8 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { Facebook } from '@ionic-native/facebook';
 import firebase from 'firebase';
+import { GooglePlus } from '@ionic-native/google-plus';
+
 
 let firebaseConfig = {
     apiKey: "AIzaSyDy3oDBnUdnC-RPjgqjVvTrVRv2vAc_2eA",
@@ -58,6 +60,7 @@ firebase.initializeApp(firebaseConfig);
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, IonicStorageModule,
     Facebook,
+    GooglePlus,
     NativeStorage
   ]
 })

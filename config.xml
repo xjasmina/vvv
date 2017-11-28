@@ -90,4 +90,7 @@
     <plugin name="cordova-sqlite-storage" spec="^2.1.2" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />
     <engine name="android" spec="~6.3.0" />
+    <plugin name="cordova-plugin-googleplus" spec="^5.1.1">
+        <variable name="REVERSED_CLIENT_ID" value="351107616033-mi4upnobeom629n99im9ne7hj1ge801s.apps.googleusercontent.com" />
+    </plugin>
 </widget>
