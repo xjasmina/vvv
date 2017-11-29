@@ -7,15 +7,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
 import { TripplannerPage } from '../pages/tripplanner/tripplanner';
-import { ListPage } from '../pages/list/list';
+// import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
-import { RegisterPage } from '../pages/register/register';
-import { PasswordPage } from '../pages/password/password';
+// import { RegisterPage } from '../pages/register/register';
+// import { PasswordPage } from '../pages/password/password';
 
 
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import { AngularFireAuth } from 'angularfire2/auth';
+// import { AngularFireAuth } from 'angularfire2/auth';
 
 
 
@@ -27,10 +27,12 @@ export class MyApp {
 
   rootPage: any = LoginPage;
 
+  loginPage = LoginPage;
+
   pages: Array<{title: string, component: any}>;
 
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage) {
 
 
     // used for an example of ngFor and navigation
@@ -39,7 +41,7 @@ export class MyApp {
       { title: 'Achievements', component: LevelingPage },
       { title: 'Tripplanner', component: TripplannerPage },
       // { title: 'List', component: ListPage },
-      { title: 'Login', component: LoginPage }
+      // { title: 'Login', component: LoginPage }
       // { title: 'Register', component: RegisterPage },
       // { title: 'Password', component: PasswordPage }
     ];
@@ -61,6 +63,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  goToLogin() {
+    this.nav.setRoot(LoginPage);
   }
 
 }

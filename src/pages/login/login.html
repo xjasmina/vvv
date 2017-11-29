@@ -26,8 +26,7 @@
 
   <div padding>
     <button block ion-button (click)="signInUser()" item-left>Sign In</button>
-    <button block ion-button  [navPush]="registerPage" item-left>Register</button>
-      <ion-title> {{ email }} </ion-title>
+    <button block ion-button  (click)="goToRegister()" item-left>Register</button>
   </div>
 
   <div padding>

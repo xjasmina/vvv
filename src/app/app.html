@@ -10,11 +10,7 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-      <button ion-button full *ngIf="!userProfile" (click)="loginFB()">Login met Facebook</button>
-      <button ion-button full *ngIf="!userProfile" (click)="loginGM()">Login met Google</button>
-
-      <button ion-button full *ngIf="userProfile" (click)="logoutFB()">Uitloggen fb</button>
-      <button ion-button full *ngIf="userProfile" (click)="logoutGM()">Uitloggen gm</button>
+      <button block ion-button  (click)="goToLogin()" item-left>Inloggen</button>
     </ion-list>
   </ion-content>
 </ion-menu>

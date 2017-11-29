@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
@@ -11,7 +12,6 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { PasswordPage } from '../pages/password/password';
-
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -52,7 +52,7 @@ let firebaseAuth = {
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

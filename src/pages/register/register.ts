@@ -34,7 +34,7 @@ export class RegisterPage {
     .then(data => {
       console.log('got data ', data);
       this.alert('Geregistreerd! U bent nu ingelogd.');
-      this.navCtrl.push(HomePage);
+      this.navCtrl.setRoot(HomePage);
     })
     .catch(error => {
       console.log('got an error ', error);

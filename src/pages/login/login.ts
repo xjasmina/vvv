@@ -17,10 +17,6 @@ import { HomePage } from '../home/home';
 export class LoginPage { 
 
 
-	// link register button to here
-	registerPage = RegisterPage;
-
-
 	//show login screen
 	@ViewChild('username') user;
 	@ViewChild('password') password;
@@ -51,11 +47,15 @@ export class LoginPage {
 			console.log('got error, error');
 			this.alert('Email of wachtwoord incorrect');
 		})
-	console.log('Would log in with ', this.user.value, this.password.value);
+		console.log('Would log in with ', this.user.value, this.password.value);
 	}
 
 	goToReset() {
 		this.navCtrl.push(PasswordPage);
+	}
+
+	goToRegister() {
+		this.navCtrl.push(RegisterPage);
 	}
 
 } // end class loginpage
