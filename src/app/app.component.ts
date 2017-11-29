@@ -9,11 +9,13 @@ import { LevelingPage } from '../pages/leveling/leveling';
 import { TripplannerPage } from '../pages/tripplanner/tripplanner';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import { PasswordPage } from '../pages/password/password';
+
 
 import { NativeStorage } from '@ionic-native/native-storage';
 
-import firebase from 'firebase';
-import { Facebook } from '@ionic-native/facebook';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 
@@ -27,21 +29,8 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private facebook: Facebook) {
 
-
-    //add facebook on every page
-  firebase.auth().onAuthStateChanged( user => {
-    if (user){
-      this.userProfile = user;
-      this.rootPage = HomePage;
-      alert("test of je ingelogd bent");
-    } else { 
-      this.userProfile = null; 
-      this.rootPage = LoginPage;
-      alert("test of je niet ingelogd bent");
-    }
-  });
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth) {
 
 
     // used for an example of ngFor and navigation
@@ -49,42 +38,14 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Achievements', component: LevelingPage },
       { title: 'Tripplanner', component: TripplannerPage },
-      { title: 'List', component: ListPage },
+      // { title: 'List', component: ListPage },
       { title: 'Login', component: LoginPage }
+      // { title: 'Register', component: RegisterPage },
+      // { title: 'Password', component: PasswordPage }
     ];
 
   }
 
-
-  //if facebook started, check current user
-  userProfile = firebase.auth().currentUser;
-
-  loginFB(): void {
-    this.facebook.login(['email']).then( (response) => {
-      const facebookCredential = firebase.auth.FacebookAuthProvider
-        .credential(response.authResponse.accessToken);
-
-      firebase.auth().signInWithCredential(facebookCredential)
-        .then((success) => {
-          console.log("Firebase success: " + JSON.stringify(success));
-          this.userProfile = success;
-        });
-      }, (error) => {
-          console.log("Firebase failure: " + JSON.stringify(error));
-      });
-  }
-
-  //logout of facebook
-  logoutFB() {
-   firebase.auth().signOut()
-   .then(function() {
-      console.log('Signout successful!')
-   }, function(error) {
-      console.log('Signout failed')
-   });
-}
-
-  //////////////
 
   initializeApp() {
     this.platform.ready().then(() => {

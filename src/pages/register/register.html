@@ -3,10 +3,9 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Login</ion-title>
+    <ion-title>Register</ion-title>
   </ion-navbar>
 </ion-header>
-
 
 <ion-content padding>
   
@@ -22,17 +21,10 @@
     <ion-input type="password" #password></ion-input>
   </ion-item>
   
-  </ion-list>
+</ion-list>
 
-  <div padding>
-    <button block ion-button (click)="signInUser()" item-left>Sign In</button>
-    <button block ion-button  [navPush]="registerPage" item-left>Register</button>
-      <ion-title> {{ email }} </ion-title>
-  </div>
-
-  <div padding>
-    <button block ion-button  (click)="goToReset()" item-left>Wachtwoord vergeten</button>
-  </div>
-
+<div padding>
+  <button block ion-button (click)="registerUser()" item-left>Register</button>
+</div>
 
 </ion-content>

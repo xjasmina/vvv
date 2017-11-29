@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
-import firebase from 'firebase';
-import { Facebook } from '@ionic-native/facebook';
-import { GooglePlus } from '@ionic-native/google-plus';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+
+import { RegisterPage } from '../register/register';
+import { PasswordPage } from '../password/password';
 
 
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-login',
@@ -13,68 +16,46 @@ import { GooglePlus } from '@ionic-native/google-plus';
 
 export class LoginPage { 
 
-constructor( private facebook: Facebook, private google: GooglePlus){ 
 
-    firebase.auth().onAuthStateChanged( user => {
-    if (user){
-      this.userProfile = user;
-      alert("test of je ingelogd bent");
-    } else { 
-      this.userProfile = null; 
-      alert("test of je niet ingelogd bent");
-    }
-  });
-
-}
+	// link register button to here
+	registerPage = RegisterPage;
 
 
-  userProfile = firebase.auth().currentUser;
+	//show login screen
+	@ViewChild('username') user;
+	@ViewChild('password') password;
 
-//facebook
-  loginFB(): void {
-    this.facebook.login(['email']).then( (response) => {
-      const facebookCredential = firebase.auth.FacebookAuthProvider
-        .credential(response.authResponse.accessToken);
+	constructor(private alertCtrl: AlertController, private fire: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
 
-      firebase.auth().signInWithCredential(facebookCredential)
-        .then((success) => {
-          console.log("Firebase success: " + JSON.stringify(success));
-          this.userProfile = success;
-        });
-      }, (error) => {
-          console.log("Firebase failure: " + JSON.stringify(error));
-      });
+	}
+
+
+	//login system
+
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Info!',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
   }
 
-  logoutFB() {
-   firebase.auth().signOut()
-   .then(function() {
-      console.log('Signout successful!')
-   }, function(error) {
-      console.log('Signout failed')
-   });
-}
+	signInUser () {
+		this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
+		.then(data => {
+			console.log('got some data', this.fire.auth.currentUser);
+			this.alert('Je bent ingelogd');
+			this.navCtrl.setRoot(HomePage);
+		})
+		.catch(error =>  {
+			console.log('got error, error');
+			this.alert('Email of wachtwoord incorrect');
+		})
+	console.log('Would log in with ', this.user.value, this.password.value);
+	}
 
-// google login
-
-loginUser(): void {
-  this.google.login({
-    'webClientId': '351107616033-mi4upnobeom629n99im9ne7hj1ge801s.apps.googleusercontent.com',
-    'offline': true
-  }).then( res => {
-          const googleCredential = firebase.auth.GoogleAuthProvider
-              .credential(res.idToken);
- 
-          firebase.auth().signInWithCredential(googleCredential)
-        .then( response => {
-            console.log("Firebase success: " + JSON.stringify(response));
-            this.userProfile = response;
-        });
-  }, (error) => {
-          console.log("Firebase failure: " + JSON.stringify(error));
-      });
-}
-  
-
+	goToReset() {
+		this.navCtrl.push(PasswordPage);
+	}
 
 } // end class loginpage

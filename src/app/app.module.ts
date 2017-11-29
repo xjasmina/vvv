@@ -7,8 +7,11 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
 import { TripplannerPage } from '../pages/tripplanner/tripplanner';
-import { ListPage, } from '../pages/list/list';
-import { LoginPage, } from '../pages/login/login';
+import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
+import { RegisterPage } from '../pages/register/register';
+import { PasswordPage } from '../pages/password/password';
+
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,12 +19,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IonicStorageModule } from '@ionic/storage';
 
-import { Facebook } from '@ionic-native/facebook';
-import firebase from 'firebase';
-import { GooglePlus } from '@ionic-native/google-plus';
+// import firebase from 'firebase';
+import { AuthProvider } from '../providers/auth/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
-let firebaseConfig = {
+
+let firebaseAuth = {
     apiKey: "AIzaSyDy3oDBnUdnC-RPjgqjVvTrVRv2vAc_2eA",
     authDomain: "vvv-project.firebaseapp.com",
     databaseURL: "https://vvv-project.firebaseio.com",
@@ -30,7 +35,6 @@ let firebaseConfig = {
     messagingSenderId: "351107616033"
 };
 
-firebase.initializeApp(firebaseConfig);  
 
 @NgModule({
   declarations: [
@@ -39,12 +43,16 @@ firebase.initializeApp(firebaseConfig);
     LevelingPage,
     TripplannerPage,
     ListPage,
-    LoginPage
+    LoginPage,
+    RegisterPage,
+    PasswordPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,15 +61,16 @@ firebase.initializeApp(firebaseConfig);
     LevelingPage,
     TripplannerPage,
     ListPage,
-    LoginPage
+    LoginPage,
+    RegisterPage,
+    PasswordPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, IonicStorageModule,
-    Facebook,
-    GooglePlus,
-    NativeStorage
+    NativeStorage,
+    AuthProvider
   ]
 })
 export class AppModule {}
