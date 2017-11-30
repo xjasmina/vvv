@@ -3,8 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 
-
-import { HomePage } from '../home/home';
+import { LoginPage } from '../login/login';
 
 
 @Component({
@@ -29,12 +28,14 @@ export class RegisterPage {
     }).present();
   }
 
+  
+
   registerUser() {
     this.fire.auth.createUserWithEmailAndPassword(this.user.value, this.password.value)
     .then(data => {
       console.log('got data ', data);
-      this.alert('Geregistreerd! U bent nu ingelogd.');
-      this.navCtrl.setRoot(HomePage);
+      this.alert('Geregistreerd! U kunt nu inloggen.');
+      this.navCtrl.setRoot(LoginPage);
     })
     .catch(error => {
       console.log('got an error ', error);

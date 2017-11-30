@@ -3,6 +3,7 @@
     <ion-toolbar>
       <ion-title>Menu</ion-title>
     </ion-toolbar>
+    <h1 *ngIf="!user">Welcome {{username}}</h1>
   </ion-header>
 
   <ion-content>
@@ -10,7 +11,8 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-      <button block ion-button  (click)="goToLogin()" item-left>Inloggen</button>
+      <button block ion-button *ngIf="!user"  (click)="goToLogin()" item-left>Inloggen</button>
+      <button block ion-button *ngIf="!user" (click)="logOut()" item-left>Logout</button>
     </ion-list>
   </ion-content>
 </ion-menu>

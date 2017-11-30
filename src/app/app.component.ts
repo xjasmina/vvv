@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 
 import { HomePage } from '../pages/home/home';
@@ -12,10 +13,7 @@ import { LoginPage } from '../pages/login/login';
 // import { RegisterPage } from '../pages/register/register';
 // import { PasswordPage } from '../pages/password/password';
 
-
 import { NativeStorage } from '@ionic-native/native-storage';
-
-// import { AngularFireAuth } from 'angularfire2/auth';
 
 
 
@@ -24,16 +22,26 @@ import { NativeStorage } from '@ionic-native/native-storage';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+  @ViewChild('username') user;
 
   rootPage: any = LoginPage;
-
-  loginPage = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage) {
 
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth) {
+
+
+    this.fire.auth.onAuthStateChanged( user => {
+      if (user){
+        this.rootPage = HomePage;
+        alert("test of je ingelogd bent");
+      } else { 
+        this.rootPage = LoginPage;
+        alert("test of je niet ingelogd bent");
+      }
+    });
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -47,7 +55,6 @@ export class MyApp {
     ];
 
   }
-
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -64,9 +71,17 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-
+ 
   goToLogin() {
     this.nav.setRoot(LoginPage);
+  }
+
+  logOut() {
+    this.fire.auth.signOut().then(function() {
+    // Sign-out successful.
+    }, function(error) {
+      console.log(error);
+    });
   }
 
 }

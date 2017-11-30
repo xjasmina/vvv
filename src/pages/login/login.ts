@@ -25,23 +25,27 @@ export class LoginPage {
 
 	}
 
-
 	//login system
 
-  alert(message: string) {
-    this.alertCtrl.create({
-      title: 'Info!',
-      subTitle: message,
-      buttons: ['OK']
-    }).present();
-  }
+	  alert(message: string) {
+	    this.alertCtrl.create({
+	      title: 'Info!',
+	      subTitle: message,
+	      buttons: ['OK']
+	    }).present();
+	  }
+
+
 
 	signInUser () {
 		this.fire.auth.signInWithEmailAndPassword(this.user.value, this.password.value)
 		.then(data => {
 			console.log('got some data', this.fire.auth.currentUser);
 			this.alert('Je bent ingelogd');
-			this.navCtrl.setRoot(HomePage);
+
+			window.localStorage.setItem('username', this.user.value);
+        	window.localStorage.setItem('password',this.password.value);
+        	
 		})
 		.catch(error =>  {
 			console.log('got error, error');
@@ -49,6 +53,7 @@ export class LoginPage {
 		})
 		console.log('Would log in with ', this.user.value, this.password.value);
 	}
+
 
 	goToReset() {
 		this.navCtrl.push(PasswordPage);
