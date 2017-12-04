@@ -32,16 +32,27 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth) {
 
+    let name, email, photoUrl, uid, emailVerified;
 
     this.fire.auth.onAuthStateChanged( user => {
       if (user){
         this.rootPage = HomePage;
         alert("test of je ingelogd bent");
+
+        // name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        emailVerified = user.emailVerified;
+        uid = user.uid;
+
+       document.getElementById("username").innerHTML = "Ingelogd als" + email;
+
       } else { 
         this.rootPage = LoginPage;
         alert("test of je niet ingelogd bent");
       }
     });
+
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -71,6 +82,7 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
  
   goToLogin() {
     this.nav.setRoot(LoginPage);

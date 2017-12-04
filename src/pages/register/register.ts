@@ -34,8 +34,7 @@ export class RegisterPage {
     this.fire.auth.createUserWithEmailAndPassword(this.user.value, this.password.value)
     .then(data => {
       console.log('got data ', data);
-      this.alert('Geregistreerd! U kunt nu inloggen.');
-      this.navCtrl.setRoot(LoginPage);
+      this.alert('Geregistreerd! U bent nu ingelogd.');
     })
     .catch(error => {
       console.log('got an error ', error);

@@ -9,26 +9,28 @@ import { Component } from '@angular/core';
 export class LevelingPage {
 
 
- levelClick() {
+ // levelClick() {
 
 
-    var level = "0";
+ //    var level = "0";
 
-    if(typeof(Storage) !== "undefined") {
+ //    if(typeof(Storage) !== "undefined") {
 
 
-          localStorage.level = Number(localStorage.level) + 1;
-          localStorage.level = Math.min(Math.max(parseInt(localStorage.level), 0), 200);
+ //          localStorage.level = Number(localStorage.level) + 1;
+ //          localStorage.level = Math.min(Math.max(parseInt(localStorage.level), 0), 200);
 
-          localStorage.setItem('current-level', level);
+ //          localStorage.setItem('current-level', level);
      
-      }
-        else {
+ //      }
+ //        else {
            
-        }
-          document.getElementById("current-level").innerHTML = "You have clicked the button " + localStorage.level + " time(s).";
-      }
+ //        }
+ //          document.getElementById("current-level").innerHTML = "You have clicked the button " + localStorage.level + " time(s).";
+ //      }
 
+
+ 
 
 
 }
