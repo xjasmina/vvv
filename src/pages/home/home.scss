@@ -1,3 +1,17 @@
 page-home {
-
+	.leeuwarden {
+		background: url(../assets/imgs/leeuwarden-bg.png) center center no-repeat;
+	}
+	.big {
+		height: 200px;
+		width: 200px;
+		border-radius: 50%;
+		background-color: $white;
+	}
+	h2 {
+		color: $blue;
+	}
+	p {
+		color: $black;
+	}
 }

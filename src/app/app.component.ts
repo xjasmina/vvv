@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-import { LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
@@ -37,8 +36,7 @@ export class MyApp {
   pages: Array<{title: string, component: any}>;
 
 
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth,  public loadingCtrl: LoadingController, public storage: Storage) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth, public storage: Storage) {
 
 
     this.storage.get('tutorialShown').then((result) => {
@@ -53,24 +51,19 @@ export class MyApp {
     });
  
 
+    //check if user is logged in or not
     let email;
 
     this.fire.auth.onAuthStateChanged( user => {
       if (user){
         this.rootPage = HomePage;
-        //alert("test of je ingelogd bent");
 
-        // name = user.displayName;
         email = user.email;
-
 
        document.getElementById("username").innerHTML = "Ingelogd als " + email;
 
-
       } else { 
         this.rootPage = LoginPage;
-        //alert("test of je niet ingelogd bent");
-
         document.getElementById("username").innerHTML = "Niet ingelogd";
 
       }
