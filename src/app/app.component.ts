@@ -4,10 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+import { LoadingController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
 import { TripplannerPage } from '../pages/tripplanner/tripplanner';
+import { TutorialPage } from '../pages/tutorial/tutorial';
+
 // import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 // import { RegisterPage } from '../pages/register/register';
@@ -20,39 +24,57 @@ import { NativeStorage } from '@ionic-native/native-storage';
 @Component({
   templateUrl: 'app.html'
 })
+
+
 export class MyApp {
+
   @ViewChild(Nav) nav: Nav;
   @ViewChild('username') user;
 
   rootPage: any = LoginPage;
+  loader: any;
 
   pages: Array<{title: string, component: any}>;
 
 
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth,  public loadingCtrl: LoadingController, public storage: Storage) {
 
-    let name, email, photoUrl, uid, emailVerified;
+
+    this.storage.get('tutorialShown').then((result) => {
+ 
+        if(result){
+          this.nav.setRoot(HomePage);
+        } else {
+          this.nav.setRoot(TutorialPage);
+          this.storage.set('tutorialShown', true);
+        }
+  
+    });
+ 
+
+    let email;
 
     this.fire.auth.onAuthStateChanged( user => {
       if (user){
         this.rootPage = HomePage;
-        alert("test of je ingelogd bent");
+        //alert("test of je ingelogd bent");
 
         // name = user.displayName;
         email = user.email;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
-        uid = user.uid;
 
-       document.getElementById("username").innerHTML = "Ingelogd als" + email;
+
+       document.getElementById("username").innerHTML = "Ingelogd als " + email;
+
 
       } else { 
         this.rootPage = LoginPage;
-        alert("test of je niet ingelogd bent");
+        //alert("test of je niet ingelogd bent");
+
+        document.getElementById("username").innerHTML = "Niet ingelogd";
+
       }
     });
-
 
     // used for an example of ngFor and navigation
     this.pages = [

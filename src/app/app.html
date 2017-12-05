@@ -10,9 +10,9 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-      <button block ion-button *ngIf="!user"  (click)="goToLogin()" item-left>Inloggen</button>
-      <button block ion-button *ngIf="!user" (click)="logOut()" item-left>Logout</button>
-      <p id="username">Welcome {{ email }}</p>
+      <button block ion-button id="login" (click)="goToLogin()" item-left>Inloggen</button>
+      <button block ion-button id="logout" (click)="logOut()" item-left>Logout</button>
+      <p id="username">Niet in/uitgelogd</p>
     </ion-list>
   </ion-content>
 </ion-menu>
