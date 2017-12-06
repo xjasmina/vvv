@@ -42,7 +42,7 @@ export class MyApp {
     this.storage.get('tutorialShown').then((result) => {
  
         if(result){
-          this.nav.setRoot(HomePage);
+          this.user;
         } else {
           this.nav.setRoot(TutorialPage);
           this.storage.set('tutorialShown', true);

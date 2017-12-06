@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -14,18 +14,24 @@
     <!-- leeuwarden slide -->
     <ion-slide class="leeuwarden">
 
-      <button ion-button>Bezienswaardigheden</button>
-      <button ion-button>Weetjes</button>
+      <button ion-button class="small">Beziens waar digheden</button>
+      <button ion-button class="smallest">Weetjes</button>
 
       <button ion-button class="big">
-          <ion-list>
-            <h2>Leeuwarden</h2>
-          <p>De Hoofdstad van Friesland</p>
-          <p>Culturele hoofdstad in 2018</p>
-          </ion-list>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-12><h2>Leeuwarden</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>De <b>Hoofdstad</b> van Friesland</li>
+                    <li><b>Culturele</b> hoofdstad in 2018</li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
       </button>
       
-      <button ion-button>Toevoegen tripplanner</button>
+      <button ion-button class="small1">Toevoegen tripplanner</button>
 
   </ion-slide>
    <!-- end leeuwarden slide -->

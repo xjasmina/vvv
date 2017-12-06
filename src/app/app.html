@@ -1,5 +1,5 @@
 <ion-menu [content]="content">
-  <ion-header>
+  <ion-header no-border>
     <ion-toolbar>
       <ion-title>Menu</ion-title>
     </ion-toolbar>
@@ -17,5 +17,24 @@
   </ion-content>
 </ion-menu>
 
+<ion-footer class="footer">
+    <ion-grid >
+      <ion-row>
+
+       <ion-col col-4>
+          <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+       </ion-col>
+
+       <ion-col col-4>
+          <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+       </ion-col>
+
+       <ion-col col-4>
+          <img class="wapen" src="assets/imgs/wapen.png" alt="">
+       </ion-col>
+
+      </ion-row>
+    </ion-grid>
+</ion-footer>
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
