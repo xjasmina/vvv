@@ -7,15 +7,44 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
- <ion-list>
+<ion-content >
+  <div id="floating-panel">
+    <b>Start: </b>
+    <select [(ngModel)]="Destination" id="start">
+      <option value="53.201132, 5.797696">Leeuwarden</option>
+      <option value="53.033898, 5.658166">Sneek</option>
+      <option value="53.011151, 5.618786">IJlst</option>
+      <option value="oklahoma city, ok">Sloten</option>
+      <option value="amarillo, tx">Stavoren</option>
+      <option value="gallup, nm">Hindeloopen</option>
+      <option value="flagstaff, az">Workum</option>
+      <option value="winona, az">Bolsward</option>
+      <option value="kingman, az">Harlingen</option>
+      <option value="barstow, ca">Franeker</option>
+      <option value="san bernardino, ca">Dokkum</option>
+      <option value="los angeles, ca">Leeuwarden (finish)</option>
+    </select><br>
+    
 
-        <ion-item>
-            <ion-label floating>Waar wilt u naartoe?</ion-label>
-            <ion-input type="text" [(ngModel)]="Destination"></ion-input>
-        </ion-item>
-    </ion-list>
+    </div>
+
+    <div id="floating-panel">
+    <b>Mode of Travel: </b>
+    <select id="mode"  >
+      <option value="DRIVING">Driving</option>
+      <option value="WALKING">Walking</option>
+      <option value="BICYCLING">Bicycling</option>
+      <option value="TRANSIT">Transit</option>
+    </select>
+    </div>
+
+
+
+
     <button ion-button full (click)="calculateAndDisplayRoute()">Get Direction</button>
 
-    <div id="map"></div>
+
+    
+
+ <div id="map"></div>
 </ion-content>
