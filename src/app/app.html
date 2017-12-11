@@ -13,8 +13,18 @@
       <button block ion-button id="login" (click)="goToLogin()" item-left>Inloggen</button>
       <button block ion-button id="logout" (click)="logOut()" item-left>Logout</button>
       <p id="username">Niet in/uitgelogd</p>
+
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="myInput"></ion-input>
+      </ion-item>
+      <button block ion-button (click)="createItem()" item-left>create item</button>
+
     </ion-list>
+
+
   </ion-content>
+
+
 </ion-menu>
 
 <ion-footer class="footer">

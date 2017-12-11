@@ -1,8 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Injectable } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from "angularfire2/database";
+import { FirebaseListObservable } from "angularfire2/database-deprecated";
+
 
 import { Storage } from '@ionic/storage';
 
@@ -17,14 +20,13 @@ import { MapsPage } from '../pages/maps/maps';
 import { LoginPage } from '../pages/login/login';
 // import { RegisterPage } from '../pages/register/register';
 // import { PasswordPage } from '../pages/password/password';
-
 import { NativeStorage } from '@ionic-native/native-storage';
-
 
 
 @Component({
   templateUrl: 'app.html'
 })
+
 
 
 export class MyApp {
@@ -37,9 +39,29 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
+  items: FirebaseListObservable<MyApp[]> = null;
+  userId: string;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public NativeStorage: NativeStorage, private fire: AngularFireAuth, public storage: Storage) {
+  myInput
 
+  constructor(
+
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen, 
+    public NativeStorage: NativeStorage, 
+    private fire: AngularFireAuth, 
+    private db: AngularFireDatabase, 
+    public storage: Storage 
+
+    ) {
+
+
+    //subscribe to database
+     this.fire.authState.subscribe(user => {
+      if(user) this.userId = user.uid
+    })
+    //end
 
     this.storage.get('tutorialShown').then((result) => {
  
@@ -83,7 +105,21 @@ export class MyApp {
       // { title: 'Password', component: PasswordPage }
     ];
 
+  } //end constructor
+
+
+//reach database
+  getItemsList(): FirebaseListObservable<MyApp[]> {
+
+    if (!this.userId) return;
+      let items = this.db.list(`items/${this.userId}`);
+      return this.items
+    }
+
+  createItem() {
+     this.db.list(`items/${this.userId}`).push(this.myInput);
   }
+//end database
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -101,7 +137,6 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
- 
   goToLogin() {
     this.nav.setRoot(LoginPage);
   }
