@@ -1,4 +1,4 @@
-import { Component, ViewChild, Injectable } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -41,8 +41,9 @@ export class MyApp {
 
   items: FirebaseListObservable<MyApp[]> = null;
   userId: string;
+  dataLeveling = []
 
-  myInput
+  myInput: string;
 
   constructor(
 
@@ -57,11 +58,11 @@ export class MyApp {
     ) {
 
 
-    //subscribe to database
-     this.fire.authState.subscribe(user => {
-      if(user) this.userId = user.uid
-    })
-    //end
+    // //subscribe to database
+    //  this.fire.authState.subscribe(user => {
+    //   if(user) this.userId = user.uid;
+    // })
+    // //end
 
     this.storage.get('tutorialShown').then((result) => {
  
@@ -84,12 +85,11 @@ export class MyApp {
 
         email = user.email;
 
-       document.getElementById("username").innerHTML = "Ingelogd als " + email;
+        document.getElementById("username").innerHTML = "Ingelogd als " + email;
 
       } else { 
         this.rootPage = LoginPage;
         document.getElementById("username").innerHTML = "Niet ingelogd";
-
       }
     });
 
@@ -108,18 +108,20 @@ export class MyApp {
   } //end constructor
 
 
-//reach database
-  getItemsList(): FirebaseListObservable<MyApp[]> {
+// //reach database
+//   getItemsList(): FirebaseListObservable<MyApp[]> {
 
-    if (!this.userId) return;
-      let items = this.db.list(`items/${this.userId}`);
-      return this.items
-    }
+//     if (!this.userId) return;
+//       let items = this.db.list(`items/${this.userId}`);
 
-  createItem() {
-     this.db.list(`items/${this.userId}`).push(this.myInput);
-  }
-//end database
+//       return this.items;
+
+//     }
+
+//   createItem() {
+//      this.db.list(`items/${this.userId}`).push(this.myInput);
+//   }
+// //end database
 
   initializeApp() {
     this.platform.ready().then(() => {

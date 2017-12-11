@@ -9,9 +9,18 @@
 
 
 <ion-content>
- <!--  <h1>test</h1>
-  <button (click)='levelClick();' >leveling</button> 
-  <p>Level: 
-  <span id="current-level">
-  </span></p> -->
+  
+  <ion-list>
+     <h2>Bezochte steden</h2>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="myInput"></ion-input>
+        </ion-item>
+
+        <button block ion-button (click)="createItem()" item-left>create item</button>
+
+        <ion-item>
+          {{userId}} 
+        </ion-item>
+  </ion-list>
+
 </ion-content>
