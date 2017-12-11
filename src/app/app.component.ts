@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
 import { TripplannerPage } from '../pages/tripplanner/tripplanner';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { MapsPage } from '../pages/maps/maps';
+
 
 // import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
@@ -74,6 +76,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Achievements', component: LevelingPage },
       { title: 'Tripplanner', component: TripplannerPage },
+      { title: 'Map', component: MapsPage },
       // { title: 'List', component: ListPage },
       // { title: 'Login', component: LoginPage }
       // { title: 'Register', component: RegisterPage },

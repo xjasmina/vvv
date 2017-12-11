@@ -51,5 +51,21 @@ p {
 .footer {
 	background-color: $blue;
 	height: 60px;
+	.wapen {
+		margin-top: -40px;
+	}
+	.vvv-logo {
+		width: 75%;
+	}
+	.elfsteden {
+		width: 80%;
+	    display: block;
+	    margin: 0 auto;
+	    margin-top: 5px;
+	}
 }
 
+.scroll-content {
+	padding: 0!important;
+	margin-top: 0;
+}

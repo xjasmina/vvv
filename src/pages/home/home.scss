@@ -17,7 +17,11 @@ page-home {
 		white-space: normal;
 	}
 	.big {
-		position: static;
+		position: absolute;
+	    left: 0;
+	    right: 0;
+	    margin: 0 auto;
+	    top: 140px;
 	}
 	.small {
 		height: 110px;

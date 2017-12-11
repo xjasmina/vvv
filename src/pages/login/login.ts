@@ -49,7 +49,7 @@ export class LoginPage {
 		})
 		.catch(error =>  {
 			console.log('got error, error');
-			this.alert('Email of wachtwoord incorrect');
+			this.alert('Email of wachtwoord incorrect (of mogelijk heeft u geen internet verbinding)');
 		})
 		console.log('Would log in with ', this.user.value, this.password.value);
 	}

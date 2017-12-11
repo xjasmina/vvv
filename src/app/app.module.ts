@@ -13,6 +13,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { PasswordPage } from '../pages/password/password';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { MapsPage } from '../pages/maps/maps';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -47,7 +48,8 @@ let firebaseAuth = {
     LoginPage,
     RegisterPage,
     PasswordPage,
-    TutorialPage
+    TutorialPage,
+    MapsPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,8 @@ let firebaseAuth = {
     LoginPage,
     RegisterPage,
     PasswordPage,
-    TutorialPage
+    TutorialPage,
+    MapsPage
   ],
   providers: [
     StatusBar,
