@@ -26,6 +26,8 @@ import { AuthProvider } from '../providers/auth/auth';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 
 
 let firebaseAuth = {
@@ -57,6 +59,7 @@ let firebaseAuth = {
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseAuth),
     AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
