@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 declare var google;
@@ -16,6 +16,8 @@ declare var google;
   templateUrl: 'maps.html',
 })
 export class MapsPage {
+
+    @ViewChild('directionsPanel') directionsPanel: ElementRef;
 
 
 	Destination: any = '53.201132, 5.797696';
@@ -257,6 +259,7 @@ export class MapsPage {
 		    });
 		    
 		    directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(this.directionsPanel.nativeElement);//route display
 
 		    if (navigator.geolocation) {
 		      navigator.geolocation.getCurrentPosition(function(position) {
