@@ -34,7 +34,9 @@ export class MapsPage {
 	  	calculateAndDisplayRoute() {
 		let that = this;
 
-		var selectedMode = document.getElementById('mode').value;
+
+
+		var selectedMode = (<HTMLInputElement>document.getElementById('mode')).value; //document.getElementById('mode').value;
 
 //		this.map = new google.maps.Map(document.getElementById('map'), {
 //          center: {lat: -34.397, lng: 150.644},
