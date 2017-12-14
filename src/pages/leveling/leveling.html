@@ -9,18 +9,26 @@
 
 
 <ion-content>
-  
-  <ion-list>
-     <h2>Bezochte steden</h2>
-        <ion-item>
-          <ion-input type="text" [(ngModel)]="myInput"></ion-input>
-        </ion-item>
 
-        <button block ion-button (click)="createItem()" item-left>create item</button>
+ <ion-list>
 
-        <ion-item>
-          {{userId}} 
-        </ion-item>
-  </ion-list>
+   <ion-item>
+    <ion-thumbnail item-start>
+      <img src="img/thumbnail-totoro.png">
+    </ion-thumbnail>
+     <ion-label>Leeuwarden</ion-label>
+     <ion-checkbox [(ngModel)]="myInput" (ionChange)="updateCities()" name="Leeuwarden">Leeuwarden</ion-checkbox>
+   </ion-item>
+
+ </ion-list>
+<!-- <p>
+  The person's name is {{ myPerson.firstName }}
+</p>
+
+<p>
+  The person's name is {{ userId }} 
+</p> -->
+
+
 
 </ion-content>

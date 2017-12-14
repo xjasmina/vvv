@@ -39,12 +39,6 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  items: FirebaseListObservable<MyApp[]> = null;
-  userId: string;
-  dataLeveling = []
-
-  myInput: string;
-
   constructor(
 
     public platform: Platform, 

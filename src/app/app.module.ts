@@ -14,6 +14,7 @@ import { RegisterPage } from '../pages/register/register';
 import { PasswordPage } from '../pages/password/password';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { MapsPage } from '../pages/maps/maps';
+import { WeetjesPage } from '../pages/weetjes/weetjes';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,6 +28,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FirebaseProvider } from '../providers/firebase/firebase';
 
 
 
@@ -51,7 +53,8 @@ let firebaseAuth = {
     RegisterPage,
     PasswordPage,
     TutorialPage,
-    MapsPage
+    MapsPage,
+    WeetjesPage
   ],
   imports: [
     BrowserModule,
@@ -72,14 +75,16 @@ let firebaseAuth = {
     RegisterPage,
     PasswordPage,
     TutorialPage,
-    MapsPage
+    MapsPage,
+    WeetjesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, IonicStorageModule,
     NativeStorage,
-    AuthProvider
+    AuthProvider,
+    FirebaseProvider
   ]
 })
 export class AppModule {}
