@@ -15,7 +15,7 @@
     <ion-slide class="leeuwarden">
 
       <button ion-button class="small">Beziens waar digheden</button>
-      <button ion-button class="smallest" (click)="goToFacts()">Weetjes</button>
+      <button ion-button class="smallest" (click)="goToFactsLwd()">Weetjes</button>
 
       <button ion-button class="big">
         <ion-grid>
@@ -32,17 +32,73 @@
       </button>
       
       <button ion-button class="small1">Toevoegen tripplanner</button>
+  
+      <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
 
-  </ion-slide>
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-leeuwarden.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
    <!-- end leeuwarden slide -->
 
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
+    <ion-slide class="sloten">
+
+      <button ion-button class="small">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsSlo()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Sloten</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                    <li><b>Kleinste</b> stad van de wereld</li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-sloten.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
     </ion-slide>
 
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
-    </ion-slide>
+    <!-- end sloten slide -->
+
 
   </ion-slides>
 

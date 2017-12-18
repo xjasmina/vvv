@@ -8,27 +8,22 @@
 </ion-header>
 
 
-<ion-content>
+<<ion-content>
 
- <ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="firstName"></ion-input>
+    </ion-item>
+  </ion-list>
 
-   <ion-item>
-    <ion-thumbnail item-start>
-      <img src="img/thumbnail-totoro.png">
-    </ion-thumbnail>
-     <ion-label>Leeuwarden</ion-label>
-     <ion-checkbox [(ngModel)]="myInput" (ionChange)="updateCities()" name="Leeuwarden">Leeuwarden</ion-checkbox>
-   </ion-item>
+  <button ion-button block (click)="createPerson(firstName)">
+    Create Person
+  </button>
 
- </ion-list>
-<!-- <p>
-  The person's name is {{ myPerson.firstName }}
+  <p>
+  The person's name is {{ userId }}
 </p>
-
-<p>
-  The person's name is {{ userId }} 
-</p> -->
-
 
 
 </ion-content>
