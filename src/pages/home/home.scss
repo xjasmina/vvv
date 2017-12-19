@@ -1,11 +1,37 @@
 page-home {
+
 	.leeuwarden {
 		background: url(../assets/imgs/leeuwarden-bg.png) center center no-repeat;
+		background-size: 110%;
+    	background-position: 0 0;
+		.small, .small1, .smallest {
+			color: $blue;
+		}
 	}
+	.sloten {
+		background: url(../assets/imgs/sloten-bg.png) center center no-repeat;
+		background-size: 110%;
+    	background-position: 0 0;
+		h2 {
+			color: $red;
+		}
+		.small, .small1, .smallest {
+			color: $red;
+		}
+		.footer {
+			background-color: $red;
+		}
+	}
+
+	//buttons
 	.button {
 		color: $black;
+		text-decoration: underline;
 	}
+
 	.big, .small, .small1, .smallest {
+		font-family: $font-head;
+		font-weight: 600;
 		height: 250px;
 		width: 250px;
 		border-radius: 50%;
@@ -17,11 +43,14 @@ page-home {
 		white-space: normal;
 	}
 	.big {
+		font-family: $font-normal;
+		font-weight: normal;
 		position: absolute;
 	    left: 0;
 	    right: 0;
 	    margin: 0 auto;
 	    top: 140px;
+	    text-decoration: none;
 	}
 	.small {
 		height: 110px;
@@ -41,6 +70,8 @@ page-home {
 		right: 0;
     	top: 120px;
 	}
+
+	//list items
 	ul {
 		padding: 0;
 		margin-left: 15px;
@@ -51,4 +82,11 @@ page-home {
 			text-align: left;
 		}
 	}
+
+	//slide pager
+
+	.swiper-pagination-bullets {
+		bottom: 80px!important;
+	}
+
 }

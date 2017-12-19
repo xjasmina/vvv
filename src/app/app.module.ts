@@ -14,7 +14,12 @@ import { RegisterPage } from '../pages/register/register';
 import { PasswordPage } from '../pages/password/password';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { MapsPage } from '../pages/maps/maps';
+
+//all facts pages
 import { WeetjesPage } from '../pages/weetjes/weetjes';
+import { WeetjesLwdPage } from '../pages/weetjes-lwd/weetjes-lwd';
+import { WeetjesSloPage } from '../pages/weetjes-slo/weetjes-slo';
+//end 
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -54,7 +59,9 @@ let firebaseAuth = {
     PasswordPage,
     TutorialPage,
     MapsPage,
-    WeetjesPage
+    WeetjesPage,
+    WeetjesLwdPage,
+    WeetjesSloPage
   ],
   imports: [
     BrowserModule,
@@ -76,7 +83,9 @@ let firebaseAuth = {
     PasswordPage,
     TutorialPage,
     MapsPage,
-    WeetjesPage
+    WeetjesPage,
+    WeetjesLwdPage,
+    WeetjesSloPage
   ],
   providers: [
     StatusBar,

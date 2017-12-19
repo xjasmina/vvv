@@ -1,3 +1,32 @@
 page-weetjes {
+	// accordion {
 
+	//     .card-header{
+	//         background-color: map-get($colors, primary);
+	//         color: #fff;
+	//     }
+	//     .card-content {
+	//         padding: 0px 16px; 
+	//         max-height: 0px;
+	//     }
+	// }
+
+	.weetjes-slide {
+		background: url(../assets/imgs/weetjes/weetjes-bg.png) 0 -265px;
+		 img {
+		 	display: block;
+		    margin: 0 auto;
+		    text-align: center;
+		    margin-top: -130px;
+		    max-width: 110px;
+		 }
+		 p {
+		 	padding: 25px;
+		 	font-size: 26px;
+		 }
+	}
+
+	.swiper-pagination-bullets {
+		bottom: 80px!important;
+	}
 }

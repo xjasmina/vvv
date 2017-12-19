@@ -5,7 +5,9 @@ import { NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 // import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabase } from "angularfire2/database";
-import { FirebaseListObservable } from "angularfire2/database-deprecated";
+
+import { MapsPage } from '../maps/maps';
+
 
 import firebase from 'firebase';
 
@@ -17,68 +19,51 @@ import firebase from 'firebase';
 
 export class LevelingPage {
 
-	// body: string;
   	userId: string;
- //  	dataId: string;
 	myInput: '';
-	public myPerson = {};
+	public myCity = [];
 
-	person: string;
-
-	cities: any;
 
 	constructor( navCtrl: NavController, private fire: AngularFireAuth, public db: AngularFireDatabase) {
      
-	     	this.fire.authState.subscribe(user => {
-	      		if(user) this.userId = user.uid;
-	    	});
-
-
-     	this.cities = ['Leeuwarden', 'Franeker']; 
+	 	this.fire.authState.subscribe(user => {
+	  		if(user) this.userId = user.uid;
+		});
 
  	}
 
+	insertCity(cityName: string): void {
 
-       updateCities(myInput: string) {
-    	 const personRef: firebase.database.Reference = firebase.database().ref(`/person/` + this.userId);
-		  	personRef.push(myInput).set({
-
-		  })
-
-		  	console.log("test");
-  	}
+	  const cityRef: firebase.database.Reference = firebase.database().ref(`/city/` + this.userId);
+	  	cityRef.push({ 
+	    	cityName
+		});
+	}
 
 
+	ionViewDidLoad() {
+	  const cityRef: firebase.database.Reference = firebase.database().ref(`/city/` + this.userId);
 
+	  cityRef.on('value', snapshot => {
 
-     //subscribe user to database
+	      snapshot.forEach(snap => {
+	      	
+	      		this.myCity = snapshot.val();
+		     	return snapshot.val();
 
+		   });
 
-	 //     	this.fire.authState.subscribe(user => {
-	 //      		if(user) this.userId = user.uid;
-	 //    	});
+		    console.log(snapshot.val());
 
+	    	document.getElementById("stad").innerHTML = "De bezochte steden zijn" +  this.myCity + (snapshot.val());
 
- 	// 	} //end constructor	
+	  });
 
-		// createPerson(firstName: string): void{
-		//   const personRef: firebase.database.Reference = firebase.database().ref(`/person/` + this.userId);
-		//   personRef.push(firstName).set({
-		//   	name: firstName
-		//   }).then(function() {
+	}
 
-		//   	personRef.orderByValue();
+	checkCity() {
 
-		//   })
-
-		// }
-
-		// ionViewDidLoad() {
-		//   const personRef: firebase.database.Reference = firebase.database().ref(`/person/` + this.userId);
-		//   personRef.on('value', personSnapshot => {
-		//     this.myPerson = personSnapshot.val();
-		//   });
-		// }
+	}
 
 }
 
