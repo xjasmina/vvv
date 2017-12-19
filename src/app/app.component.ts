@@ -51,13 +51,6 @@ export class MyApp {
 
     ) {
 
-
-    // //subscribe to database
-    //  this.fire.authState.subscribe(user => {
-    //   if(user) this.userId = user.uid;
-    // })
-    // //end
-
     this.storage.get('tutorialShown').then((result) => {
  
         if(result){
@@ -101,21 +94,6 @@ export class MyApp {
 
   } //end constructor
 
-
-// //reach database
-//   getItemsList(): FirebaseListObservable<MyApp[]> {
-
-//     if (!this.userId) return;
-//       let items = this.db.list(`items/${this.userId}`);
-
-//       return this.items;
-
-//     }
-
-//   createItem() {
-//      this.db.list(`items/${this.userId}`).push(this.myInput);
-//   }
-// //end database
 
   initializeApp() {
     this.platform.ready().then(() => {

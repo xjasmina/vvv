@@ -13,17 +13,22 @@
   <ion-list>
     <ion-item>
       <ion-label fixed>First Name</ion-label>
-      <ion-input type="text" [(ngModel)]="firstName"></ion-input>
+      <ion-input type="text" [(ngModel)]="cityName"></ion-input>
     </ion-item>
   </ion-list>
 
-  <button ion-button block (click)="createPerson(firstName)">
+  <button ion-button block (click)="insertCity(cityName)">
     Create Person
   </button>
 
   <p>
-  The person's name is {{ userId }}
-</p>
+    The person's name is {{ userId }}
+  </p>
+
+
+  <p id="stad">
+    Login om je progressie te bekijken
+  </p>
 
 
 </ion-content>

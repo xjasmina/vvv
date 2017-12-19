@@ -5,7 +5,9 @@ import { NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 // import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabase } from "angularfire2/database";
-import { FirebaseListObservable } from "angularfire2/database-deprecated";
+
+import { MapsPage } from '../maps/maps';
+
 
 import firebase from 'firebase';
 
@@ -19,11 +21,8 @@ export class LevelingPage {
 
   	userId: string;
 	myInput: '';
-	public myPerson = {};
+	public myCity = [];
 
-	person: string;
-
-	cities: any;
 
 	constructor( navCtrl: NavController, private fire: AngularFireAuth, public db: AngularFireDatabase) {
      
@@ -33,18 +32,37 @@ export class LevelingPage {
 
  	}
 
-	createPerson(firstName: string): void {
-	  const personRef: firebase.database.Reference = firebase.database().ref(`/person/` + this.userId);
-	  	personRef.push({ 
-	    firstName
-		})
+	insertCity(cityName: string): void {
+
+	  const cityRef: firebase.database.Reference = firebase.database().ref(`/city/` + this.userId);
+	  	cityRef.push({ 
+	    	cityName
+		});
 	}
 
+
 	ionViewDidLoad() {
-	  const personRef: firebase.database.Reference = firebase.database().ref(`/person1/`);
-	  personRef.on('value', personSnapshot => {
-	    this.myPerson = personSnapshot.val();
+	  const cityRef: firebase.database.Reference = firebase.database().ref(`/city/` + this.userId);
+
+	  cityRef.on('value', snapshot => {
+
+	      snapshot.forEach(snap => {
+	      	
+	      		this.myCity = snapshot.val();
+		     	return snapshot.val();
+
+		   });
+
+		    console.log(snapshot.val());
+
+	    	document.getElementById("stad").innerHTML = "De bezochte steden zijn" +  this.myCity + (snapshot.val());
+
 	  });
+
+	}
+
+	checkCity() {
+
 	}
 
 }
