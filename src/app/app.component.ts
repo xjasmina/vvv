@@ -22,6 +22,8 @@ import { LoginPage } from '../pages/login/login';
 // import { PasswordPage } from '../pages/password/password';
 import { NativeStorage } from '@ionic-native/native-storage';
 
+import { Geofence } from '@ionic-native/geofence';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -47,7 +49,8 @@ export class MyApp {
     public NativeStorage: NativeStorage, 
     private fire: AngularFireAuth, 
     private db: AngularFireDatabase, 
-    public storage: Storage 
+    public storage: Storage ,
+    private geofence: Geofence
 
     ) {
 
@@ -123,6 +126,11 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.geofence.initialize().then(
+        // resolved promise does not return a value
+        () => console.log('Geofence Plugin Ready' ),//() => this.addGeofence(),//console.log('Geofence Plugin Ready' ),
+        (err) => console.log(err)
+      )
     });
 
   }
@@ -144,5 +152,73 @@ export class MyApp {
       console.log(error);
     });
   }
+
+  private addGeofence() {
+  //options describing geofence
+  let fence = {
+    id: '69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb', //any unique ID
+    latitude:       53.211690, //center of geofence radius
+    longitude:      5.798568,
+    radius:         50, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    notification: { //notification settings
+        id:             1, //any unique ID
+        title:          'You crossed a fence', //notification title
+        text:           'You just arrived to Gliwice city center.', //notification body
+        openAppOnClick: true //open app when notification is tapped
+
+
+    }
+  }
+
+  let fence1 = {
+    id: '19ca1b88-6fbe-4e80-a4d4-ff4d3748acdb', //any unique ID
+    latitude:       53.208834, //center of geofence radius
+    longitude:      5.798174,
+    radius:         100, //radius to edge of geofence in meters
+    transitionType: 3, //see 'Transition Types' below
+    notification: { //notification settings
+        id:             2, //any unique ID
+        title:          'bjffddfgkd', //notification title
+        text:           'You just arrived to Gliwice city center.', //notification body
+        openAppOnClick: true //open app when notification is tapped
+
+    }
+  }
+
+   let fence3 = {
+    id: '69ca1b88-6fbe-4e80-a4d4-ff4d3740acdbdf', //any unique ID
+    latitude:       53.211282, //center of geofence radius
+    longitude:      5.799528,
+    radius:         50, //radius to edge of geofence in meters
+    transitionType: 3, //see 'Transition Types' below
+    notification: { //notification settings
+        vibrate: [1000],
+        id:             1, //any unique ID
+        title:          'dddddddddddfdfdf', //notification title
+        text:           'You just arrived to Gliwice city center.', //notification body
+        openAppOnClick: true //open app when notification is tapped
+
+
+    }
+  }
+
+  this.geofence.addOrUpdate(fence).then(
+     () => console.log('Geofence added'),
+     (err) => console.log('Geofence failed to add')
+   );
+
+   this.geofence.addOrUpdate(fence1).then(
+     () => console.log('Geofence1!!!!! added'),
+     (err) => console.log('Geofence failed to add')
+   );
+
+   this.geofence.addOrUpdate(fence3).then(
+     () => console.log('dfjksdfjslf!!!!! added'),
+     (err) => console.log('Geofence failed to add')
+   );
+
+
+}
 
 }

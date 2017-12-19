@@ -30,7 +30,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
-
+import { Geofence } from '@ionic-native/geofence';
 
 let firebaseAuth = {
     apiKey: "AIzaSyDy3oDBnUdnC-RPjgqjVvTrVRv2vAc_2eA",
@@ -84,7 +84,8 @@ let firebaseAuth = {
     {provide: ErrorHandler, useClass: IonicErrorHandler}, IonicStorageModule,
     NativeStorage,
     AuthProvider,
-    FirebaseProvider
+    FirebaseProvider,
+    Geofence
   ]
 })
 export class AppModule {}
