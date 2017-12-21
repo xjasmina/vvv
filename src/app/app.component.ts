@@ -63,6 +63,7 @@ export class MyApp {
         }
   
     });
+    this.initializeApp();
  
 
     //check if user is logged in or not
