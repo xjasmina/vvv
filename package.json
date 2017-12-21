@@ -78,7 +78,8 @@
       "cordova-plugin-nativestorage": {},
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "com.googleusercontent.apps.351107616033-mi4upnobeom629n99im9ne7hj1ge801s"
-      }
+      },
+      "cordova-plugin-add-swift-support": {}
     },
     "platforms": [
       "ios",
