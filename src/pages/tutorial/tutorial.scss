@@ -1,5 +1,25 @@
 page-tutorial {
 	ion-slide {
 		background: url(../assets/imgs/tut-bg.png) center center no-repeat;
+		background-position: 0px 333px;
+    	background-size: 100%;
+	}
+	.slide-info {
+		padding: 40px!important;
+	}
+	h2 {
+		color: $black;
+		font-weight: 600;
+		font-size: 28x;
+	}
+	p {
+		font-size: 20px;
+	}
+	.swiper-pagination-bullets {
+		bottom: 30px!important;
+	}
+	.button {
+		top: 25px!important;
+		margin-bottom: 10px;
 	}
 }

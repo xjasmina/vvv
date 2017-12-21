@@ -21,6 +21,19 @@ import { WeetjesLwdPage } from '../pages/weetjes-lwd/weetjes-lwd';
 import { WeetjesSloPage } from '../pages/weetjes-slo/weetjes-slo';
 //end 
 
+//all beziens pages
+import { BeziensLwdPage } from '../pages/beziens-lwd/beziens-lwd';
+import { BeziensIjlPage } from '../pages/beziens-ijl/beziens-ijl';
+import { BeziensStaPage } from '../pages/beziens-sta/beziens-sta';
+import { BeziensDokPage } from '../pages/beziens-dok/beziens-dok';
+import { BeziensFraPage } from '../pages/beziens-fra/beziens-fra';
+import { BeziensBolPage } from '../pages/beziens-bol/beziens-bol';
+import { BeziensHarPage } from '../pages/beziens-har/beziens-har';
+import { BeziensSloPage } from '../pages/beziens-slo/beziens-slo';
+import { BeziensSnePage } from '../pages/beziens-sne/beziens-sne';
+import { BeziensHinPage } from '../pages/beziens-hin/beziens-hin';
+import { BeziensWorPage } from '../pages/beziens-wor/beziens-wor';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -61,7 +74,18 @@ let firebaseAuth = {
     MapsPage,
     WeetjesPage,
     WeetjesLwdPage,
-    WeetjesSloPage
+    WeetjesSloPage,
+    BeziensLwdPage,
+    BeziensIjlPage,
+    BeziensStaPage,
+    BeziensDokPage,
+    BeziensFraPage,
+    BeziensBolPage,
+    BeziensHarPage,
+    BeziensSloPage,
+    BeziensSnePage,
+    BeziensHinPage,
+    BeziensWorPage
   ],
   imports: [
     BrowserModule,
@@ -85,7 +109,18 @@ let firebaseAuth = {
     MapsPage,
     WeetjesPage,
     WeetjesLwdPage,
-    WeetjesSloPage
+    WeetjesSloPage,
+    BeziensLwdPage,
+    BeziensIjlPage,
+    BeziensStaPage,
+    BeziensDokPage,
+    BeziensFraPage,
+    BeziensBolPage,
+    BeziensHarPage,
+    BeziensSloPage,
+    BeziensSnePage,
+    BeziensHinPage,
+    BeziensWorPage
   ],
   providers: [
     StatusBar,

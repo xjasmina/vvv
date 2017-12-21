@@ -14,7 +14,7 @@
     <!-- leeuwarden slide -->
     <ion-slide class="leeuwarden">
 
-      <button ion-button class="small">Beziens waar digheden</button>
+      <button ion-button class="small" (click)="goToBeziensLwd()">Beziens waar digheden</button>
       <button ion-button class="smallest" (click)="goToFactsLwd()">Weetjes</button>
 
       <button ion-button class="big">
@@ -55,9 +55,265 @@
     </ion-slide>
    <!-- end leeuwarden slide -->
 
+    <ion-slide class="ijlst">
+
+      <button ion-button class="small" (click)="goToBeziensIjl()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsIjl()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Ijlst</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-ijlst.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+    <!-- end ijlst slide -->
+
+     <ion-slide class="stavoren">
+ 
+      <button ion-button class="small" (click)="goToBeziensSta()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsSta()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Stavoren</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-stavoren.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+    <!-- end stavoren slide -->
+
+     <ion-slide class="dokkum">
+
+      <button ion-button class="small" (click)="goToBeziensDok()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsDok()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Dokkum</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-dokkum.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+    <!-- end dokkum slide -->
+
+     <ion-slide class="franeker">
+
+      <button ion-button class="small" (click)="goToBeziensFra()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsFra()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Franeker</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-franeker.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+     <ion-slide class="bolswart">
+
+      <button ion-button class="small" (click)="goToBeziensBol()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsBol()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Bolswart</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-bolswart.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+    <!-- end bolswart slide -->
+
+     <ion-slide class="harlingen">
+
+      <button ion-button class="small" (click)="goToBeziensHar()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsHar()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Harlingen</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-harlingen.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+    <!-- end ijlst slide -->
+
     <ion-slide class="sloten">
 
-      <button ion-button class="small">Beziens waar digheden</button>
+      <button ion-button class="small" (click)="goToBeziensSlo()">Beziens waar digheden</button>
       <button ion-button class="smallest" (click)="goToFactsSlo()">Weetjes</button>
 
       <button ion-button class="big">
@@ -98,6 +354,136 @@
     </ion-slide>
 
     <!-- end sloten slide -->
+
+     <ion-slide class="sneek">
+
+      <button ion-button class="small" (click)="goToBeziensSne()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsSne()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Sneek</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-sneek.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+    <!-- end sneek slide -->
+
+     <ion-slide class="hindeloopen">
+
+      <button ion-button class="small" (click)="goToBeziensHin()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsHin()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Hindeloopen</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Heeft twee <b>waterpoorten</b></li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-hindeloopen.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+    <!-- end harlingen slide -->
+
+     <ion-slide class="workum">
+
+      <button ion-button class="small" (click)="goToBeziensWor()">Beziens waar digheden</button>
+      <button ion-button class="smallest" (click)="goToFactsWor()">Weetjes</button>
+
+      <button ion-button class="big">
+        <ion-grid>
+            <ion-row>
+
+              <ion-col col-12><h2>Workum</h2></ion-col>
+                 <ion-col col-12>
+                  <ul>
+                    <li>Jaarlijkse <b>veekeuringsdag</b></li>
+                     <li>Vroeger <b>17 molens</b> in de omgeving</li>
+                  </ul>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+      </button>
+      
+      <button ion-button class="small1">Toevoegen tripplanner</button>
+       <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-8>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-2>
+              <img class="wapen" src="assets/imgs/wapen-workum.png" alt="">
+           </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
+    </ion-slide>
+
+    <!-- end workum slide -->
 
 
   </ion-slides>

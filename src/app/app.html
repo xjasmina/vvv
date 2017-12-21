@@ -10,9 +10,9 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
-      <button block ion-button id="login" (click)="goToLogin()" item-left>Inloggen</button>
-      <button block ion-button id="logout" (click)="logOut()" item-left>Logout</button>
-      <p id="username">Niet in/uitgelogd</p>
+      <button block ion-button id="login" (click)="goToLogin()">Inloggen</button>
+      <button block ion-button id="logout" (click)="logOut()">Uitloggen</button>
+      <p id="username">U bent niet ingelogd</p>
     </ion-list>
 
   </ion-content>

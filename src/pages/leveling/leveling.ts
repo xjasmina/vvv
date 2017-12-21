@@ -48,23 +48,19 @@ export class LevelingPage {
 
 	      snapshot.forEach(snap => {
 	      	
-	      		this.myCity = snapshot.val();
+	      		this.myCity = snapshot.val().myCity;
 		     	return snapshot.val();
 
 		   });
 
 		    console.log(snapshot.val());
 
-	    	document.getElementById("stad").innerHTML = "De bezochte steden zijn" +  this.myCity + (snapshot.val());
+	    	document.getElementById("stad").innerHTML = "De bezochte steden zijn" + snapshot.val();
 
 	  });
 
 	}
-
-	checkCity() {
-
-	}
-
+	
 }
 
 

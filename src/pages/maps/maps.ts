@@ -51,7 +51,10 @@ export class MapsPage {
 		    let directionsDisplay = new google.maps.DirectionsRenderer;
 		    const map = new google.maps.Map(document.getElementById('map'), {
 		      zoom: 15,
-		      center: {lat: 41.85, lng: -87.65},
+		      center: {
+            lat: 41.85, 
+            lng: -87.65
+          },
 		      styles: [
   {
     "elementType": "geometry",

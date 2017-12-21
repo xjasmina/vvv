@@ -76,10 +76,16 @@ export class MyApp {
         email = user.email;
 
         document.getElementById("username").innerHTML = "Ingelogd als " + email;
+        document.getElementById("login").style.display = "none";
+        document.getElementById("logout").style.display = "block";
 
       } else { 
         this.rootPage = LoginPage;
         document.getElementById("username").innerHTML = "Niet ingelogd";
+        document.getElementById("login").style.display = "block";
+        document.getElementById("logout").style.display = "none";
+
+
       }
     });
 
@@ -109,6 +115,7 @@ export class MyApp {
         () => console.log('Geofence Plugin Ready' ),//() => this.addGeofence(),//console.log('Geofence Plugin Ready' ),
         (err) => console.log(err)
       )
+
     });
 
   }
@@ -130,6 +137,8 @@ export class MyApp {
       console.log(error);
     });
   }
+
+
 
   private addGeofence() {
   //options describing geofence
@@ -181,22 +190,23 @@ export class MyApp {
     }
   }
 
-  this.geofence.addOrUpdate(fence).then(
-     () => console.log('Geofence added'),
-     (err) => console.log('Geofence failed to add')
-   );
+    this.geofence.addOrUpdate(fence).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
 
-   this.geofence.addOrUpdate(fence1).then(
-     () => console.log('Geofence1!!!!! added'),
-     (err) => console.log('Geofence failed to add')
-   );
+     this.geofence.addOrUpdate(fence1).then(
+       () => console.log('Geofence1!!!!! added'),
+       (err) => console.log('Geofence failed to add')
+     );
 
-   this.geofence.addOrUpdate(fence3).then(
-     () => console.log('dfjksdfjslf!!!!! added'),
-     (err) => console.log('Geofence failed to add')
-   );
+     this.geofence.addOrUpdate(fence3).then(
+       () => console.log('dfjksdfjslf!!!!! added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+  }
 
 
-}
 
 }

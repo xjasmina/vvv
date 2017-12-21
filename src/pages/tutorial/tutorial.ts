@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ViewChild } from '@angular/core';
+
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { RegisterPage } from '../register/register';
@@ -11,8 +13,11 @@ import { HomePage } from '../home/home';
 @Component({
   selector: 'page-tutorial',
   templateUrl: 'tutorial.html',
+
 })
 export class TutorialPage {
+
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -28,4 +33,6 @@ export class TutorialPage {
 	goToLogin() {
     	this.navCtrl.push(LoginPage);
   	}
+
+
 }

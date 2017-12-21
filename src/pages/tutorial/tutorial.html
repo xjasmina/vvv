@@ -2,31 +2,42 @@
 
   <ion-slides pager>
 
-	<ion-slide style="background-color: white">
-		<img src="assets/imgs/logo.png" alt="">
-      	<h2>Welkom bij de Elfsteden VVV App!</h2>
-      	<p>Lorem ipsum</p>
-    </ion-slide>
+    <ion-slide>
 
-        <ion-slide style="background-color: white">
-
+      <div class="slide-info">
     		<img src="assets/imgs/tut1.png" alt="">
     		<h2>Het ideale reismiddel bij de elfsteden!</h2>
     		<p>Beleef de elfstedentocht op eigen houtje!</p>
 
-    		<button block ion-button>Volgende</button>
+  		  <button block ion-button>Volgende</button>
+      </div>
 
   	</ion-slide>
 
-    <ion-slide style="background-color: white">
+    <ion-slide>
 
-        <h2>Maak een profiel aan</h2>
-        <p>Door in te loggen maak je kans op leuke prijzen!</p>
+      <div class="slide-info">
+        <img src="assets/imgs/gps.png" alt="">
+        <h2>GPS</h2>
+        <p>Als jij je Bluetooth aanzet, kun je de tripplanner makkelijker gebruiken en achievements halen!</p>
 
-        <button block ion-button  (click)="goToRegister()" item-left>Registeren</button>
-        <button block ion-button (click)="goToLogin()" item-left>Ik heb al een profiel</button>
+        <button block ion-button>Volgende</button>
+      </div>
+    </ion-slide>
 
-        <button block ion-button  (click)="goToHome()" item-left>Overslaan</button>
+    <ion-slide>
+
+      <div class="slide-info">
+        <img src="assets/imgs/logo.png" alt="">
+
+        <h2>Maak een profiel!</h2>
+        <p> Door in te loggen maak je kans op leuke prijzen!</p>
+
+        <button block ion-button  (click)="goToRegister()">Registeren</button>
+        <button block ion-button (click)="goToLogin()">Ik heb al een profiel</button>
+
+        <button block ion-button  (click)="goToHome()">Overslaan</button>
+      </div>
 
     </ion-slide>
 

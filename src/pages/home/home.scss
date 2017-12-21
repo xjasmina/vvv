@@ -1,17 +1,16 @@
 page-home {
 
+
 	.leeuwarden {
 		background: url(../assets/imgs/leeuwarden-bg.png) center center no-repeat;
-		background-size: 110%;
-    	background-position: 0 0;
+
 		.small, .small1, .smallest {
 			color: $blue;
 		}
 	}
 	.sloten {
 		background: url(../assets/imgs/sloten-bg.png) center center no-repeat;
-		background-size: 110%;
-    	background-position: 0 0;
+
 		h2 {
 			color: $red;
 		}
@@ -21,6 +20,37 @@ page-home {
 		.footer {
 			background-color: $red;
 		}
+	}
+	.workum {
+		background: url(../assets/imgs/workum-bg.png) center center no-repeat;
+
+		h2 {
+			color: $black;
+		}
+		.small, .small1, .smallest {
+			color: $black;
+		}
+		.footer {
+			background-color: #1a1a1a;
+		}
+	}
+	.hindeloopen {
+		background: url(../assets/imgs/hindeloopen-bg.png) center center no-repeat;
+
+		h2 {
+			color: #b21c1c;
+		}
+		.small, .small1, .smallest {
+			color: #b21c1c;
+		}
+		.footer {
+			background-color: #00804a;
+		}
+	}
+
+	.leeuwarden, .sloten, .workum, .hindeloopen {
+		background-size: 110%;
+    	background-position: 0 0;
 	}
 
 	//buttons

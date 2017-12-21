@@ -15,35 +15,5 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WeetjesPage {
 
-
-  // diseases = [
-  //   { title: "Leeuwarden", 
-  //   	weetje1: 'Never gonna give you up',
-  //   	weetje2: 'test',
-  //   	weetje3: 'Nog een weetje'
-  //   },
-  //   { title: "Leeuwarden", 
-  //   	weetje1: 'Never gonna give you up',
-  //   	weetje2: 'test',
-  //   	weetje3: 'Nog een weetje'
-  //   },
-  // ];
-
-  // shownGroup = null;
-
-  // constructor(public navCtrl: NavController, public navParams: NavParams) {
-  // }
-
-  //  toggleGroup(group) {
-  //     if (this.isGroupShown(group)) {
-  //         this.shownGroup = null;
-  //     } else {
-  //         this.shownGroup = group;
-  //     }
-  // };
-  // isGroupShown(group) {
-  //     return this.shownGroup === group;
-  // };
-
 }
 
