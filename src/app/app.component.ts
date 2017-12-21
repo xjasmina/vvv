@@ -3,15 +3,14 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase } from "angularfire2/database";
-import { FirebaseListObservable } from "angularfire2/database-deprecated";
+// import { AngularFireDatabase } from "angularfire2/database";
+// import { FirebaseListObservable } from "angularfire2/database-deprecated";
 
 
 import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
-import { TripplannerPage } from '../pages/tripplanner/tripplanner';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { MapsPage } from '../pages/maps/maps';
 
@@ -48,7 +47,7 @@ export class MyApp {
     public splashScreen: SplashScreen, 
     public NativeStorage: NativeStorage, 
     private fire: AngularFireAuth, 
-    private db: AngularFireDatabase, 
+    // private db: AngularFireDatabase, 
     public storage: Storage ,
     private geofence: Geofence
 
@@ -93,8 +92,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Achievements', component: LevelingPage },
-      { title: 'Tripplanner', component: TripplannerPage },
-      { title: 'Map', component: MapsPage },
+      { title: 'Map', component: MapsPage }
       // { title: 'List', component: ListPage },
       // { title: 'Login', component: LoginPage }
       // { title: 'Register', component: RegisterPage },

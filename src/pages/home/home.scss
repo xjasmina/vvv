@@ -47,8 +47,92 @@ page-home {
 			background-color: #00804a;
 		}
 	}
+	.ijlst {
+		background: url(../assets/imgs/ijlst-bg.png) center center no-repeat;
+		h2 {
+			color: #2a4b9b;
+		}
+		.small, .small1, .smallest {
+			color: #2a4b9b;
+		}
+		.footer {
+			background-color: #2a4b9b;
+		}
+	}
+	.stavoren {
+		background: url(../assets/imgs/stavoren-bg.png) center center no-repeat;
+		h2 {
+			color: #b21c1c;
+		}
+		.small, .small1, .smallest {
+			color: #b21c1c;
+		}
+		.footer {
+			background-color: #aa0000;
+		}
+	}
+	.dokkum {
+		background: url(../assets/imgs/dokkum-bg.png) center center no-repeat;
+		h2 {
+			color: $black;
+		}
+		.small, .small1, .smallest {
+			color: $black;
+		}
+		.footer {
+			background-color: #2a4b9b;
+		}
+	}
+	.franeker {
+		background: url(../assets/imgs/franeker-bg.png) center center no-repeat;
+		h2 {
+			color: #1e7ac8;
+		}
+		.small, .small1, .smallest {
+			color: #1e7ac8;
+		}
+		.footer {
+			background-color: #1e7ac8;
+		}
+	}
+	.bolsward {
+		background: url(../assets/imgs/bolsward-bg.png) center center no-repeat;
+		h2 {
+			color: $black;
+		}
+		.small, .small1, .smallest {
+			color: $black;
+		}
+		.footer {
+			background-color: #b21c1c;
+		}
+	}
+	.harlingen {
+		background: url(../assets/imgs/harlingen-bg.png) center center no-repeat;
+		h2 {
+			color: #be1622;
+		}
+		.small, .small1, .smallest {
+			color: #be1622;
+		}
+		.footer {
+			background-color: #be1622;
+		}
+	}
+	.sneek {
+		background: url(../assets/imgs/sneek-bg.png) center center no-repeat;
+		h2 {
+			color: $black;
+		}
+		.small, .small1, .smallest {
+			color: $black;
+		}
+		.footer {
+			background-color: $black;
+		}
+	}
 
-	.leeuwarden, .sloten, .workum, .hindeloopen {
+	.leeuwarden, .sloten, .workum, .hindeloopen, .ijlst, .stavoren, .dokkum, .franeker, .bolsward, .harlingen, .sneek {
 		background-size: 110%;
     	background-position: 0 0;
 	}
