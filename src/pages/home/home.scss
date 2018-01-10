@@ -1,5 +1,13 @@
 page-home {
 
+	.footer  {
+		.wapen {
+			margin-top: 0px!important;
+		}
+		[col-3] {
+			margin-top: -60px!important;
+		}
+	}
 
 	.leeuwarden {
 		background: url(../assets/imgs/leeuwarden-bg.png) center center no-repeat;
@@ -156,6 +164,8 @@ page-home {
 		box-shadow: 0px 0px 40px -14px rgba(0,0,0,0.41);
 		white-space: normal;
 	}
+
+
 	.big {
 		font-family: $font-normal;
 		font-weight: normal;
@@ -165,24 +175,25 @@ page-home {
 	    margin: 0 auto;
 	    top: 140px;
 	    text-decoration: none;
+	    z-index: 1;
 	}
 	.small {
 		height: 110px;
 		width: 110px;
-		bottom: 120px;
-    	left: 0;
-	}
+		bottom: 156px;
+    	left: 10px;
+   	}
 	.small1 {
-		right: 0!important;
-		bottom: 90px;
+		right: 10px;
+		bottom: 140px;
 		height: 120px;
 		width: 120px;
 	}
 	.smallest {
 		height: 100px;
 		width: 100px;
-		right: 0;
-    	top: 120px;
+		right: 20px;
+    	top: 100px;
 	}
 
 	//list items

@@ -4,6 +4,16 @@ import { Component } from '@angular/core';
 import { WeetjesPage } from '../weetjes/weetjes';
 import { WeetjesLwdPage } from '../weetjes-lwd/weetjes-lwd';
 import { WeetjesSloPage } from '../weetjes-slo/weetjes-slo';
+import { WeetjesIjlPage } from '../weetjes-ijl/weetjes-ijl';
+import { WeetjesStaPage } from '../weetjes-sta/weetjes-sta';
+import { WeetjesDokPage } from '../weetjes-dok/weetjes-dok';
+import { WeetjesFraPage } from '../weetjes-fra/weetjes-fra';
+import { WeetjesBolPage } from '../weetjes-bol/weetjes-bol';
+import { WeetjesHarPage } from '../weetjes-har/weetjes-har';
+import { WeetjesSnePage } from '../weetjes-sne/weetjes-sne';
+import { WeetjesHinPage } from '../weetjes-hin/weetjes-hin';
+import { WeetjesWorPage } from '../weetjes-wor/weetjes-wor';
+
 
 //beziens
 import { BeziensLwdPage } from '../beziens-lwd/beziens-lwd';
@@ -46,6 +56,43 @@ export class HomePage {
 
   goToFactsSlo() {
     this.navCtrl.push(WeetjesSloPage);
+  }
+
+  goToFactsSta() {
+    this.navCtrl.push(WeetjesStaPage);
+  }
+
+  goToFactsIjl() {
+    this.navCtrl.push(WeetjesIjlPage);
+  }
+
+
+  goToFactsDok() {
+    this.navCtrl.push(WeetjesDokPage);
+  }
+
+  goToFactsFra() {
+    this.navCtrl.push(WeetjesFraPage);
+  }
+
+  goToFactsBol() {
+    this.navCtrl.push(WeetjesBolPage);
+  }
+
+  goToFactsHar() {
+    this.navCtrl.push(WeetjesHarPage);
+  }
+
+  goToFactsSne() {
+    this.navCtrl.push(WeetjesSnePage);
+  }
+
+  goToFactsHin() {
+    this.navCtrl.push(WeetjesHinPage);
+  }
+
+  goToFactsWor() {
+    this.navCtrl.push(WeetjesWorPage);
   }
 
 
