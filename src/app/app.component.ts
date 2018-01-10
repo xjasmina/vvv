@@ -23,6 +23,24 @@ import { NativeStorage } from '@ionic-native/native-storage';
 
 import { Geofence } from '@ionic-native/geofence';
 
+import { BeziensFraPage } from '../pages/beziens-fra/beziens-fra';
+import { BeziensBolPage } from '../pages/beziens-bol/beziens-bol';
+import { BeziensDokPage } from '../pages/beziens-dok/beziens-dok';
+import { BeziensHarPage } from '../pages/beziens-har/beziens-har';
+import { BeziensHinPage } from '../pages/beziens-hin/beziens-hin';
+import { BeziensIjlPage } from '../pages/beziens-ijl/beziens-ijl';
+import { BeziensLwdPage } from '../pages/beziens-lwd/beziens-lwd';
+import { BeziensSloPage } from '../pages/beziens-slo/beziens-slo';
+import { BeziensSnePage } from '../pages/beziens-sne/beziens-sne';
+import { BeziensStaPage } from '../pages/beziens-sta/beziens-sta';
+import { BeziensWorPage } from '../pages/beziens-wor/beziens-wor';
+
+
+
+
+
+
+
 
 @Component({
   templateUrl: 'app.html'
@@ -111,7 +129,7 @@ export class MyApp {
       this.splashScreen.hide();
       this.geofence.initialize().then(
         // resolved promise does not return a value
-        () => console.log('Geofence Plugin Ready' ),//() => this.addGeofence(),//console.log('Geofence Plugin Ready' ),
+        () => this.addGeofence(),//() => this.addGeofence(),//console.log('Geofence Plugin Ready' ),
         (err) => console.log(err)
       )
 
@@ -141,68 +159,293 @@ export class MyApp {
 
   private addGeofence() {
   //options describing geofence
-  let fence = {
-    id: '69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb', //any unique ID
-    latitude:       53.211690, //center of geofence radius
-    longitude:      5.798568,
-    radius:         50, //radius to edge of geofence in meters
+  let fra = {
+    id: 'Franeker', //any unique ID
+    latitude:       53.187165,  //center of geofence radius
+    longitude:      5.541883,
+    radius:         500, //radius to edge of geofence in meters
     transitionType: 1, //see 'Transition Types' below
-    notification: { //notification settings
-        id:             1, //any unique ID
-        title:          'You crossed a fence', //notification title
-        text:           'You just arrived to Gliwice city center.', //notification body
-        openAppOnClick: true //open app when notification is tapped
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 1,
+        title: 'Welkom in Franeker',
+        text: 'Benieuwd wat er te zien is? ',
 
+        data: this.navCtrl.push(BeziensFraPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
 
-    }
-  }
-
-  let fence1 = {
-    id: '19ca1b88-6fbe-4e80-a4d4-ff4d3748acdb', //any unique ID
-    latitude:       53.208834, //center of geofence radius
-    longitude:      5.798174,
-    radius:         100, //radius to edge of geofence in meters
-    transitionType: 3, //see 'Transition Types' below
-    notification: { //notification settings
-        id:             2, //any unique ID
-        title:          'bjffddfgkd', //notification title
-        text:           'You just arrived to Gliwice city center.', //notification body
-        openAppOnClick: true //open app when notification is tapped
-
-    }
-  }
-
-   let fence3 = {
-    id: '69ca1b88-6fbe-4e80-a4d4-ff4d3740acdbdf', //any unique ID
-    latitude:       53.211282, //center of geofence radius
-    longitude:      5.799528,
-    radius:         50, //radius to edge of geofence in meters
-    transitionType: 3, //see 'Transition Types' below
-    notification: { //notification settings
-        vibrate: [1000],
-        id:             1, //any unique ID
-        title:          'dddddddddddfdfdf', //notification title
-        text:           'You just arrived to Gliwice city center.', //notification body
-        openAppOnClick: true //open app when notification is tapped
 
 
     }
   }
 
-    this.geofence.addOrUpdate(fence).then(
+  let wor = {
+    id: 'Workum', //any unique ID
+    latitude:       52.979278,   //center of geofence radius
+    longitude:      5.447921,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 2,
+        title: 'Welkom in Workum',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensWorPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let bol = {
+    id: 'Bolsward', //any unique ID
+    latitude:       53.060325,   //center of geofence radius
+    longitude:      5.511188,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 3,
+        title: 'Welkom in Bolsward',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensBolPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let dok = {
+    id: 'Dokkum', //any unique ID
+    latitude:       53.323866,   //center of geofence radius
+    longitude:      5.999071,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 4,
+        title: 'Welkom in Dokkum',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensDokPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let har = {
+    id: 'Harlingen', //any unique ID
+    latitude:       53.175036,   //center of geofence radius
+    longitude:      5.417202,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 5,
+        title: 'Welkom in Harlingen',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensHarPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let hin = {
+    id: 'Hindeloopen', //any unique ID
+    latitude:       52.942507,   //center of geofence radius
+    longitude:      5.401493,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 6,
+        title: 'Welkom in Hindeloopen',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensHinPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let ijl = {
+    id: 'IJlst', //any unique ID
+    latitude:       53.013519, //center of geofence radius
+    longitude:      5.620156,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 7,
+        title: 'Welkom in IJlst',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensIjlPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let lwd = {
+    id: 'Leeuwarden', //any unique ID
+    latitude:       53.201818,   //center of geofence radius
+    longitude:      5.797812,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 8,
+        title: 'Welkom in Leeuwarden',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensLwdPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let slo = {
+    id: 'Sloten', //any unique ID
+    latitude:       52.894799,   //center of geofence radius
+    longitude:      5.648220,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 9,
+        title: 'Welkom in Sloten',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensSloPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let sne = {
+    id: 'Sneek', //any unique ID
+    latitude:       53.033607,   //center of geofence radius
+    longitude:      5.657307,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 10,
+        title: 'Welkom in Sneek',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensSnePage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    let sta = {
+    id: 'Stavoren', //any unique ID
+    latitude:       52.884154,   //center of geofence radius
+    longitude:      5.361135,
+    radius:         500, //radius to edge of geofence in meters
+    transitionType: 1, //see 'Transition Types' below
+    onNotificationClicked(){
+      this.localNotifications.schedule({
+        id: 11,
+        title: 'Welkom in Stavoren',
+        text: 'Benieuwd wat er te zien is? ',
+
+        data: this.navCtrl.push(BeziensStaPage),
+        //at: new Date(new Date().getTime() + 5 * 1000)
+      });
+
+
+
+    }
+  }
+
+    this.geofence.addOrUpdate(fra).then(
        () => console.log('Geofence added'),
        (err) => console.log('Geofence failed to add')
      );
 
-     this.geofence.addOrUpdate(fence1).then(
-       () => console.log('Geofence1!!!!! added'),
+    this.geofence.addOrUpdate(bol).then(
+       () => console.log('Geofence added'),
        (err) => console.log('Geofence failed to add')
      );
 
-     this.geofence.addOrUpdate(fence3).then(
-       () => console.log('dfjksdfjslf!!!!! added'),
+    this.geofence.addOrUpdate(dok).then(
+       () => console.log('Geofence added'),
        (err) => console.log('Geofence failed to add')
      );
+
+    this.geofence.addOrUpdate(har).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+    this.geofence.addOrUpdate(hin).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+    this.geofence.addOrUpdate(ijl).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+    this.geofence.addOrUpdate(lwd).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+    this.geofence.addOrUpdate(slo).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+    this.geofence.addOrUpdate(sne).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+    this.geofence.addOrUpdate(sta).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+    this.geofence.addOrUpdate(wor).then(
+       () => console.log('Geofence added'),
+       (err) => console.log('Geofence failed to add')
+     );
+
+     
 
   }
 
