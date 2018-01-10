@@ -6,9 +6,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 // import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabase } from "angularfire2/database";
 
-import { MapsPage } from '../maps/maps';
-
-
 import firebase from 'firebase';
 
 @Component({

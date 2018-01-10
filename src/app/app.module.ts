@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
@@ -13,11 +12,23 @@ import { RegisterPage } from '../pages/register/register';
 import { PasswordPage } from '../pages/password/password';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { MapsPage } from '../pages/maps/maps';
+import { InfoPage } from '../pages/info/info';
+
 
 //all facts pages
 import { WeetjesPage } from '../pages/weetjes/weetjes';
 import { WeetjesLwdPage } from '../pages/weetjes-lwd/weetjes-lwd';
 import { WeetjesSloPage } from '../pages/weetjes-slo/weetjes-slo';
+import { WeetjesIjlPage } from '../pages/weetjes-ijl/weetjes-ijl';
+import { WeetjesStaPage } from '../pages/weetjes-sta/weetjes-sta';
+import { WeetjesDokPage } from '../pages/weetjes-dok/weetjes-dok';
+import { WeetjesFraPage } from '../pages/weetjes-fra/weetjes-fra';
+import { WeetjesBolPage } from '../pages/weetjes-bol/weetjes-bol';
+import { WeetjesHarPage } from '../pages/weetjes-har/weetjes-har';
+import { WeetjesSnePage } from '../pages/weetjes-sne/weetjes-sne';
+import { WeetjesHinPage } from '../pages/weetjes-hin/weetjes-hin';
+import { WeetjesWorPage } from '../pages/weetjes-wor/weetjes-wor';
+
 //end 
 
 //all beziens pages
@@ -47,6 +58,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
+
 import { Geofence } from '@ionic-native/geofence';
 
 let firebaseAuth = {
@@ -70,9 +82,19 @@ let firebaseAuth = {
     PasswordPage,
     TutorialPage,
     MapsPage,
+    InfoPage,
     WeetjesPage,
     WeetjesLwdPage,
     WeetjesSloPage,
+    WeetjesIjlPage,
+    WeetjesStaPage,
+    WeetjesDokPage,
+    WeetjesFraPage,
+    WeetjesBolPage,
+    WeetjesHarPage,
+    WeetjesSnePage,
+    WeetjesHinPage,
+    WeetjesWorPage,
     BeziensLwdPage,
     BeziensIjlPage,
     BeziensStaPage,
@@ -104,9 +126,19 @@ let firebaseAuth = {
     PasswordPage,
     TutorialPage,
     MapsPage,
+    InfoPage,
     WeetjesPage,
     WeetjesLwdPage,
     WeetjesSloPage,
+    WeetjesIjlPage,
+    WeetjesStaPage,
+    WeetjesDokPage,
+    WeetjesFraPage,
+    WeetjesBolPage,
+    WeetjesHarPage,
+    WeetjesSnePage,
+    WeetjesHinPage,
+    WeetjesWorPage,
     BeziensLwdPage,
     BeziensIjlPage,
     BeziensStaPage,

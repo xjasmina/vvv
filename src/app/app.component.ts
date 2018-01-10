@@ -13,6 +13,7 @@ import { HomePage } from '../pages/home/home';
 import { LevelingPage } from '../pages/leveling/leveling';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { MapsPage } from '../pages/maps/maps';
+import { InfoPage } from '../pages/info/info';
 
 
 // import { ListPage } from '../pages/list/list';
@@ -27,7 +28,6 @@ import { Geofence } from '@ionic-native/geofence';
 @Component({
   templateUrl: 'app.html'
 })
-
 
 
 export class MyApp {
@@ -89,11 +89,14 @@ export class MyApp {
       }
     });
 
+
+
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
+      { title: 'De Elfsteden', component: HomePage },
       { title: 'Achievements', component: LevelingPage },
-      { title: 'Map', component: MapsPage }
+      { title: 'Tripplanner', component: MapsPage },
+       { title: 'Info', component: InfoPage }
       // { title: 'List', component: ListPage },
       // { title: 'Login', component: LoginPage }
       // { title: 'Register', component: RegisterPage },
@@ -101,6 +104,7 @@ export class MyApp {
     ];
 
   } //end constructor
+
 
 
   initializeApp() {
@@ -137,7 +141,9 @@ export class MyApp {
     });
   }
 
-
+ 
+ //open menu list de elfsteden
+ 
 
   private addGeofence() {
   //options describing geofence

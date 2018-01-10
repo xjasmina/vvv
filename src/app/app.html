@@ -6,13 +6,27 @@
   </ion-header>
 
   <ion-content>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+          <img class="pompeblad" src="assets/imgs/pompeblad.png" alt="">
+        </ion-col>
+        <ion-col col-10>
+          <p id="username">U bent niet ingelogd</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
     <ion-list>
+
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
+
       <button block ion-button id="login" (click)="goToLogin()">Inloggen</button>
       <button block ion-button id="logout" (click)="logOut()">Uitloggen</button>
-      <p id="username">U bent niet ingelogd</p>
+
     </ion-list>
 
   </ion-content>
