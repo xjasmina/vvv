@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Slides } from 'ionic-angular';
 
 import { ViewChild } from '@angular/core';
 
@@ -22,6 +23,7 @@ import { HomePage } from '../home/home';
 export class TutorialPage {
 
 
+  @ViewChild(Slides) slides: Slides;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -39,7 +41,12 @@ export class TutorialPage {
     	this.navCtrl.push(LoginPage);
   	}
 
+  	goToSlide() {
+    	this.slides.slideTo(1, 500);
+  	}
 
-
+  	goToSlide2() {
+    	this.slides.slideTo(2, 500);
+  	}
 
 }
