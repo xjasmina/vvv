@@ -38,11 +38,6 @@ import { BeziensWorPage } from '../pages/beziens-wor/beziens-wor';
 
 
 
-
-
-
-
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -112,7 +107,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'De Elfsteden', component: HomePage },
-      { title: 'Achievements', component: LevelingPage },
+      // { title: 'Achievements', component: LevelingPage },
       { title: 'Tripplanner', component: MapsPage },
        { title: 'Info', component: InfoPage }
       // { title: 'List', component: ListPage },
@@ -160,7 +155,7 @@ export class MyApp {
   }
 
  
- //open menu list de elfsteden
+ //leveling
  
 
   private addGeofence() {

@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 
 // import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuth } from 'angularfire2/auth';
-// import { AngularFireModule } from "angularfire2";
-import { AngularFireDatabase } from "angularfire2/database";
+// import { AngularFireAuth } from 'angularfire2/auth';
+// // import { AngularFireModule } from "angularfire2";
+// import { AngularFireDatabase } from "angularfire2/database";
+// import { Geofence } from '@ionic-native/geofence';
 
-import firebase from 'firebase';
+
+// import firebase from 'firebase';
+
+declare var google;
+
 
 @Component({
   selector: 'page-leveling',
@@ -14,50 +19,31 @@ import firebase from 'firebase';
 })
 
 
+
 export class LevelingPage {
 
-  	userId: string;
-	myInput: '';
-	public myCity = [];
+
+	  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+	  	calculateAndDisplayRoute() {
+
+       	if(localStorage) {
+
+                navigator.geolocation.getCurrentPosition(this.savePosition);
+
+            } else {
+                alert("Geolocation wordt niet ondersteund. Bekijk uw privacy instellingen.");
+            }
+        }
+
+     	savePosition(position) {
+
+        	document.getElementById("result").innerHTML = position.coords.latitude + " " + position.coords.longitude;
+
+    	}
 
 
-	constructor( navCtrl: NavController, private fire: AngularFireAuth, public db: AngularFireDatabase) {
-     
-	 	this.fire.authState.subscribe(user => {
-	  		if(user) this.userId = user.uid;
-		});
 
- 	}
-
-	insertCity(cityName: string): void {
-
-	  const cityRef: firebase.database.Reference = firebase.database().ref(`/city/` + this.userId);
-	  	cityRef.push({ 
-	    	cityName
-		});
-	}
-
-
-	ionViewDidLoad() {
-	  const cityRef: firebase.database.Reference = firebase.database().ref(`/city/` + this.userId);
-
-	  cityRef.on('value', snapshot => {
-
-	      snapshot.forEach(snap => {
-	      	
-	      		this.myCity = snapshot.val().myCity;
-		     	return snapshot.val();
-
-		   });
-
-		    console.log(snapshot.val());
-
-	    	document.getElementById("stad").innerHTML = "De bezochte steden zijn" + snapshot.val();
-
-	  });
-
-	}
-	
 }
 
 

@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -7,22 +7,14 @@
   </ion-navbar>
 </ion-header>
 
+<ion-content>
 
-<<ion-content>
+  <h2>Progressie De Elfsteden</h2>
 
-  <ion-list>
-    <ion-item>
-      <ion-label fixed>First Name</ion-label>
-      <ion-input type="text" [(ngModel)]="cityName"></ion-input>
-    </ion-item>
-  </ion-list>
+    <button ion-button full (click)="calculateAndDisplayRoute()">Voeg huidige stad toe!</button>
 
-  <button ion-button block (click)="insertCity(cityName)">
-    Create
-  </button>
+    <div id="result">Hier komt de stad</div>
+    <div id="map"></div>
 
-  <p id="stad">
-    Login om je progressie te bekijken
-  </p>
 
 </ion-content>
