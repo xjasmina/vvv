@@ -45,8 +45,12 @@ export class TutorialPage {
     	this.slides.slideTo(1, 500);
   	}
 
-  	goToSlide2() {
-    	this.slides.slideTo(2, 500);
-  	}
+    goToSlide1() {
+      this.slides.slideTo(2, 500);
+    }
+
+    goToSlide2() {
+      this.slides.slideTo(3, 500);
+    }
 
 }

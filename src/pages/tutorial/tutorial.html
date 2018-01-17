@@ -5,11 +5,25 @@
     <ion-slide>
 
       <div class="slide-info">
+        <video width="400" height="240" autoplay loop>
+          <source src="assets/vids/gp.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+          <h2>Welkom bij de VVV Elfsteden app</h2>
+         <button block ion-button (click)="goToSlide()">Volgende</button>
+      </div>
+
+    </ion-slide>
+
+    <ion-slide>
+
+      <div class="slide-info">
     		<img src="assets/imgs/tut1.png" alt="">
     		<h2>Het ideale reismiddel bij de elfsteden!</h2>
     		<p>Beleef de elfstedentocht op eigen houtje!</p>
 
-  		  <button block ion-button (click)="goToSlide()">Volgende</button>
+  		  <button block ion-button (click)="goToSlide1()">Volgende</button>
       </div>
 
   	</ion-slide>
