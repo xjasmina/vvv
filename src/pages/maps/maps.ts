@@ -35,6 +35,7 @@ export class MapsPage {
 
 	  	calculateAndDisplayRoute() {
 		let that = this;
+		
 
 
 
@@ -79,9 +80,7 @@ export class MapsPage {
 			      }, function() {
 
 		      });
-		    } else {
-		      // Browser doesn't support Geolocation
-		    }
+		    } 
 
 		    directionsService.route({
 		    origin: this.MyLocation,

@@ -28,6 +28,8 @@ import { BeziensSnePage } from '../beziens-sne/beziens-sne';
 import { BeziensHinPage } from '../beziens-hin/beziens-hin';
 import { BeziensWorPage } from '../beziens-wor/beziens-wor';
 
+//tripplanner
+import { MapsPage } from '../maps/maps';
 
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -140,6 +142,11 @@ export class HomePage {
 
   goToBeziensWor() {
      this.navCtrl.push(BeziensWorPage);
+  }
+
+  //tripplanner
+  goToTripplanner() {
+    this.navCtrl.push(MapsPage);
   }
 
 
