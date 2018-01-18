@@ -3,30 +3,66 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Maps</ion-title>
+    <ion-title>Tripplanner</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content >
-  <div id="floating-panel">
-    <b>Naar: </b>
-    <select [(ngModel)]="Destination" id="start">
-      <option value="53.198133, 5.792123">Leeuwarden</option>
-      <option value="53.033898, 5.658166">Sneek</option>
-      <option value="53.011151, 5.618786">IJlst</option>
-      <option value="52.894521, 5.645717">Sloten</option>
-      <option value="52.882946, 5.360707">Stavoren</option>
-      <option value="52.942685, 5.401254">Hindeloopen</option>
-      <option value="52.980317, 5.449592">Workum</option>
-      <option value="53.061253, 5.521696">Bolsward</option>
-      <option value="53.174638, 5.425152">Harlingen</option>
-      <option value="53.185588, 5.542388">Franeker</option>
-      <option value="53.325545, 6.000146">Dokkum</option>
-      <!--<option value="53.198133, 5.792123">Leeuwarden (finish)</option>-->
-    </select><br>
-    
+<ion-content padding  >
+  <ion-grid>
+    <ion-row>
+      <ion-col col-9>
+        <div>
+        <b>Naar:   </b>
+        <select [(ngModel)]="Destination" id="start">
+          <option value="53.198133, 5.792123">Leeuwarden</option>
+          <option value="53.033898, 5.658166">Sneek</option>
+          <option value="53.011151, 5.618786">IJlst</option>
+          <option value="52.894521, 5.645717">Sloten</option>
+          <option value="52.882946, 5.360707">Stavoren</option>
+          <option value="52.942685, 5.401254">Hindeloopen</option>
+          <option value="52.980317, 5.449592">Workum</option>
+          <option value="53.061253, 5.521696">Bolsward</option>
+          <option value="53.174638, 5.425152">Harlingen</option>
+          <option value="53.185588, 5.542388">Franeker</option>
+          <option value="53.325545, 6.000146">Dokkum</option>
+          <!--<option value="53.198133, 5.792123">Leeuwarden (finish)</option>-->
+        </select><br>
+        
+        <b>Vervoer:</b>
+        <select id="mode"  >
+          <option value="DRIVING">Auto</option>
+          <option value="WALKING">Lopen</option>
+          <option value="BICYCLING">Fiets</option>
+          <option value="TRANSIT">Openbaarvervoer</option>
+        </select>
+        
+        </div>
+      </ion-col>
+      <ion-col>
+        <ion-buttons >
+          <button ion-button class="CalulateStartButton"(click)="calculateAndDisplayRoute()">Start</button>
+        </ion-buttons>
+      </ion-col>  
 
-    </div>
+    </ion-row>
+    
+  </ion-grid>
+
+<!--
+<ion-toolbar id="mode" no-border-top>
+    <ion-segment id="mode">
+      <ion-segment-button id="mode" value="DRIVING">
+        Auto
+      </ion-segment-button>
+      <ion-segment-button id="mode" value="WALKING">
+        Lopen
+      </ion-segment-button>
+      <ion-segment-button value="">
+        Fiets
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
 
     <div id="floating-panel">
     <b>Vervoer: </b>
@@ -37,18 +73,33 @@
       <option value="TRANSIT">Openbaarvervoer</option>
     </select>
     </div>
+   
 
 
-
-
-    <button ion-button full (click)="calculateAndDisplayRoute()">Get Direction</button>
-
-<ion-card>
+    <button ion-button full (click)="calculateAndDisplayRoute()">Plan route</button>
+-->
+    <ion-card>
         <ion-card-content>
             <div #directionsPanel></div>
         </ion-card-content>
     </ion-card>
+
+
     
 
- <div id="map"></div>
+  <div id="map"></div>
+  <ion-footer class="footer">
+        <ion-grid >
+          <ion-row>
+
+           <ion-col col-2>
+              <img class="vvv-logo" src="assets/imgs/vvv-logo.png" alt="">
+           </ion-col>
+
+           <ion-col col-7>
+              <img class="elfsteden" src="assets/imgs/elfsteden-logo.png" alt="">
+           </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-footer>
 </ion-content>
